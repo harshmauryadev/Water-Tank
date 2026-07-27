@@ -17,23 +17,22 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Showcase', href: '#product-showcase' },
-    { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Features', href: '#features' },
-    { name: 'Why Choose Us', href: '#why-choose-us' },
+    { name: 'Showcase', href: '#product-showcase', highlight: true },
+    { name: 'How It Works', href: '#how-it-works', highlight: true },
+    { name: 'Features', href: '#features', highlight: true },
+    { name: 'Why Choose Us', href: '#why-choose-us', highlight: true },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'bg-white/80 backdrop-blur-md border-b border-slate-200/80 py-3.5 shadow-sm'
           : 'bg-transparent py-5'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          
+
           {/* Brand Logo */}
           <a href="#" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-2xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/25 group-hover:scale-105 transition-transform">
@@ -53,7 +52,10 @@ export const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
+                className={`text-sm transition-colors ${link.highlight
+                    ? 'font-extrabold text-blue-600 hover:text-blue-700 tracking-wide drop-shadow-sm'
+                    : 'font-medium text-slate-600 hover:text-blue-600'
+                  }`}
               >
                 {link.name}
               </a>
@@ -89,7 +91,10 @@ export const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-semibold text-slate-700 hover:text-blue-600 py-2 border-b border-slate-100"
+                className={`py-2 border-b border-slate-100 transition-colors ${link.highlight
+                    ? 'text-base font-extrabold text-blue-600 hover:text-blue-700 tracking-wide'
+                    : 'text-base font-semibold text-slate-700 hover:text-blue-600'
+                  }`}
               >
                 {link.name}
               </a>

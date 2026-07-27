@@ -69,17 +69,64 @@ export const ProductShowcase = () => {
                 <div className="w-3 h-3 rounded-full bg-blue-500 animate-ping" />
               </div>
 
-              {/* Center Display Panel */}
-              <div className="my-8 bg-slate-950 p-6 rounded-2xl border border-blue-500/40 text-center relative shadow-inner">
-                <div className="text-[10px] font-mono text-slate-400 uppercase tracking-widest mb-1">AUTOMATIC LEVEL CONTROL</div>
-                <div className="text-5xl font-black text-white font-mono my-2 text-gradient-blue">
-                  92<span className="text-3xl text-blue-400">%</span>
+              {/* Center Display Panel with Visual 92% Filled Water Tank Graphic */}
+              <div className="my-8 bg-slate-950 p-6 rounded-2xl border border-blue-500/40 shadow-inner">
+                <div className="text-[10px] font-mono text-slate-400 uppercase tracking-widest text-center mb-3">
+                  AUTOMATIC LEVEL CONTROL
                 </div>
-                <div className="text-xs text-blue-300 font-mono">TANK FULL • MOTOR AUTO OFF</div>
-                
-                {/* Visual Level Meter */}
-                <div className="mt-4 h-3 bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-800">
-                  <div className="h-full bg-blue-500 rounded-full w-[92%]" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+                  
+                  {/* Left Column: Digital Readouts */}
+                  <div className="text-center sm:text-left space-y-2">
+                    <div className="text-5xl font-black text-white font-mono text-gradient-blue">
+                      92<span className="text-3xl text-blue-400">%</span>
+                    </div>
+                    <div className="text-xs text-blue-300 font-mono font-bold">
+                      TANK FULL • MOTOR AUTO OFF
+                    </div>
+                    <div className="text-[11px] text-slate-400 font-mono">
+                      Capacity: 920 / 1000 Liters
+                    </div>
+                    
+                    {/* Visual Level Meter Bar */}
+                    <div className="mt-3 h-3 bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                      <div className="h-full bg-gradient-to-r from-blue-600 to-sky-400 rounded-full w-[92%]" />
+                    </div>
+                  </div>
+
+                  {/* Right Column: Visual Tank Graphic Div (Showing 92% filled water) */}
+                  <div className="flex justify-center sm:justify-end">
+                    <div className="relative w-28 h-36 bg-slate-900/90 rounded-2xl border-2 border-blue-500/40 p-1.5 overflow-hidden flex flex-col justify-end shadow-lg group">
+                      
+                      {/* Top Mounted Sensor Badge */}
+                      <div className="absolute top-1 left-1/2 -translate-x-1/2 z-20 bg-slate-950 border border-blue-400/50 rounded px-1.5 py-0.5 flex items-center gap-1 shadow">
+                        <Radio className="w-2.5 h-2.5 text-blue-400 animate-pulse" />
+                        <span className="text-[8px] font-mono text-blue-300 font-bold">IoT SENSOR</span>
+                      </div>
+
+                      {/* Depth Gauge Lines */}
+                      <div className="absolute right-1 top-6 bottom-2 flex flex-col justify-between text-[8px] font-mono text-slate-500 z-10 pointer-events-none">
+                        <span>100%</span>
+                        <span>75%</span>
+                        <span>50%</span>
+                        <span>25%</span>
+                      </div>
+
+                      {/* 92% Animated Liquid Fill Container */}
+                      <div className="w-full bg-gradient-to-t from-blue-700 via-blue-500 to-sky-400 rounded-b-xl relative h-[92%] transition-all duration-500">
+                        {/* Animated Surface Ripple */}
+                        <div className="absolute -top-1.5 left-0 right-0 h-3 bg-sky-200/50 blur-[0.5px] rounded-t-full animate-pulse" />
+                        
+                        {/* Center Badge overlay inside water */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-950/80 backdrop-blur-xs px-2 py-0.5 rounded-full border border-blue-400/60 text-center">
+                          <span className="text-xs font-black text-white font-mono">92%</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
