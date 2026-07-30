@@ -8,30 +8,30 @@ export const ProductShowcase = () => {
   const pointerLabels = [
     {
       id: 1,
-      title: 'HD OLED Live Status Display',
-      desc: 'Real-time level %, water volume, and pump relay status.',
+      title: 'Tank-Base Controller Box',
+      desc: 'Sits near starter panel. Controls pump via 3 relays, senses 230V mains voltage & motor current.',
       icon: Monitor,
       position: 'top-6 -left-4 sm:left-6',
     },
     {
       id: 2,
-      title: 'Ultrasonic Sensor Input Port',
-      desc: 'Contactless depth measurement port with zero mechanical floats.',
+      title: 'Tank-Top RF Unit & Float',
+      desc: 'Mounted on tank lid with float on string. Powered by 9V adapter, sends readings over 433 MHz RF.',
       icon: Radio,
       position: 'top-10 -right-4 sm:right-6',
     },
     {
       id: 3,
-      title: 'Dual Wi-Fi & Bluetooth Antenna',
-      desc: 'Seamless cloud sync for mobile app control & push notifications.',
-      icon: Wifi,
+      title: 'Solid-Core CT & Voltage PT',
+      desc: 'Measures live AC Voltage (V), Current (A), Power (W) and Frequency (Hz) for precise dry-run protection.',
+      icon: Zap,
       position: 'bottom-8 -left-4 sm:left-6',
     },
     {
       id: 4,
-      title: 'Heavy-Duty 30A Auto Relay',
-      desc: 'Supports heavy single-phase and 3-phase water pumps up to 5HP.',
-      icon: Zap,
+      title: 'Fail-Safe 3-Relay Overlay',
+      desc: 'START1, START2 (Contactor/Capacitor) & STOP headers. Starter panel buttons keep working manually.',
+      icon: Sliders,
       position: 'bottom-8 -right-4 sm:right-6',
     },
   ];
@@ -42,9 +42,9 @@ export const ProductShowcase = () => {
         
         <SectionHeading
           badge="Product Architecture"
-          title="Engineered for Precision &"
-          highlightedTitle="Industrial Durability"
-          subtitle="Explore the advanced internal hardware and external interface of the AquaSmart IoT Controller."
+          title="Engineered for Reliability &"
+          highlightedTitle="Fail-Safe Operation"
+          subtitle="Explore the Tank-Base and Tank-Top hardware architecture of the Tanki Meter IoT System."
         />
 
         {/* Large Centered Image / Controller Showcase Card with Interactive Pointer Badges */}
@@ -58,21 +58,21 @@ export const ProductShowcase = () => {
               {/* Product Hardware Brand */}
               <div className="flex items-center justify-between pb-6 border-b border-slate-800">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white">
-                    AS
+                  <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-xs">
+                    TM
                   </div>
                   <div>
-                    <h4 className="text-sm font-extrabold text-white">AquaSmart Pro</h4>
-                    <span className="text-[10px] text-blue-400 font-mono">MODEL: IoT-WLC-2026</span>
+                    <h4 className="text-sm font-extrabold text-white">Tanki Meter IoT</h4>
+                    <span className="text-[10px] text-blue-400 font-mono">BY INFLECTION • V1.0</span>
                   </div>
                 </div>
                 <div className="w-3 h-3 rounded-full bg-blue-500 animate-ping" />
               </div>
 
-              {/* Center Display Panel with Visual 92% Filled Water Tank Graphic */}
+              {/* Center Display Panel with Visual Tank Graphic */}
               <div className="my-8 bg-slate-950 p-6 rounded-2xl border border-blue-500/40 shadow-inner">
                 <div className="text-[10px] font-mono text-slate-400 uppercase tracking-widest text-center mb-3">
-                  AUTOMATIC LEVEL CONTROL
+                  AUTOMATIC MOTOR OVERLAY
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
@@ -80,29 +80,29 @@ export const ProductShowcase = () => {
                   {/* Left Column: Digital Readouts */}
                   <div className="text-center sm:text-left space-y-2">
                     <div className="text-5xl font-black text-white font-mono text-gradient-blue">
-                      92<span className="text-3xl text-blue-400">%</span>
+                      82<span className="text-3xl text-blue-400">%</span>
                     </div>
                     <div className="text-xs text-blue-300 font-mono font-bold">
-                      TANK FULL • MOTOR AUTO OFF
+                      235.7V • 0.00A • 49.8Hz
                     </div>
                     <div className="text-[11px] text-slate-400 font-mono">
-                      Capacity: 920 / 1000 Liters
+                      Level: Normal • Pump OFF
                     </div>
                     
                     {/* Visual Level Meter Bar */}
                     <div className="mt-3 h-3 bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-800">
-                      <div className="h-full bg-gradient-to-r from-blue-600 to-sky-400 rounded-full w-[92%]" />
+                      <div className="h-full bg-gradient-to-r from-blue-600 to-sky-400 rounded-full w-[82%]" />
                     </div>
                   </div>
 
-                  {/* Right Column: Visual Tank Graphic Div (Showing 92% filled water) */}
+                  {/* Right Column: Visual Tank Graphic Div */}
                   <div className="flex justify-center sm:justify-end">
                     <div className="relative w-28 h-36 bg-slate-900/90 rounded-2xl border-2 border-blue-500/40 p-1.5 overflow-hidden flex flex-col justify-end shadow-lg group">
                       
-                      {/* Top Mounted Sensor Badge */}
+                      {/* Top Mounted RF Sensor Badge */}
                       <div className="absolute top-1 left-1/2 -translate-x-1/2 z-20 bg-slate-950 border border-blue-400/50 rounded px-1.5 py-0.5 flex items-center gap-1 shadow">
                         <Radio className="w-2.5 h-2.5 text-blue-400 animate-pulse" />
-                        <span className="text-[8px] font-mono text-blue-300 font-bold">IoT SENSOR</span>
+                        <span className="text-[8px] font-mono text-blue-300 font-bold">433MHz RF</span>
                       </div>
 
                       {/* Depth Gauge Lines */}
@@ -113,14 +113,14 @@ export const ProductShowcase = () => {
                         <span>25%</span>
                       </div>
 
-                      {/* 92% Animated Liquid Fill Container */}
-                      <div className="w-full bg-gradient-to-t from-blue-700 via-blue-500 to-sky-400 rounded-b-xl relative h-[92%] transition-all duration-500">
+                      {/* 82% Animated Liquid Fill Container */}
+                      <div className="w-full bg-gradient-to-t from-blue-700 via-blue-500 to-sky-400 rounded-b-xl relative h-[82%] transition-all duration-500">
                         {/* Animated Surface Ripple */}
                         <div className="absolute -top-1.5 left-0 right-0 h-3 bg-sky-200/50 blur-[0.5px] rounded-t-full animate-pulse" />
                         
                         {/* Center Badge overlay inside water */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-950/80 backdrop-blur-xs px-2 py-0.5 rounded-full border border-blue-400/60 text-center">
-                          <span className="text-xs font-black text-white font-mono">92%</span>
+                          <span className="text-xs font-black text-white font-mono">82%</span>
                         </div>
                       </div>
 
@@ -133,12 +133,12 @@ export const ProductShowcase = () => {
               {/* Ports & Switches */}
               <div className="grid grid-cols-2 gap-3 pt-2 text-center text-xs">
                 <div className="p-3 bg-slate-950/80 rounded-xl border border-slate-800">
-                  <span className="text-[10px] text-slate-500 block">SENSOR PORT</span>
-                  <span className="font-bold text-slate-200">ULTRASONIC V3</span>
+                  <span className="text-[10px] text-slate-500 block font-mono">TANK SENSOR</span>
+                  <span className="font-bold text-slate-200">FLOAT + RF STRING</span>
                 </div>
                 <div className="p-3 bg-slate-950/80 rounded-xl border border-slate-800">
-                  <span className="text-[10px] text-slate-500 block">RELAY CAPACITY</span>
-                  <span className="font-bold text-blue-400">30A HEAVY DUTY</span>
+                  <span className="text-[10px] text-slate-500 block font-mono">POWER / VOLT</span>
+                  <span className="font-bold text-blue-400">12V BASE + PT/CT</span>
                 </div>
               </div>
 

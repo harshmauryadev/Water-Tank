@@ -42,8 +42,8 @@ export const Contact = () => {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-slate-400 block font-mono">24/7 SUPPORT & SALES</span>
-                  <span className="text-sm font-bold text-white">+1 (800) 555-AQUA (2782)</span>
+                  <span className="text-xs text-slate-400 block font-mono">SUPPORT & SALES PHONE</span>
+                  <span className="text-sm font-bold text-white">+91 8900 900 815</span>
                 </div>
               </div>
 
@@ -52,27 +52,37 @@ export const Contact = () => {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-slate-400 block font-mono">EMAIL INQUIRIES</span>
-                  <span className="text-sm font-bold text-white">support@aquasensepro.com</span>
+                  <span className="text-xs text-slate-400 block font-mono">EMAIL SUPPORT</span>
+                  <span className="text-sm font-bold text-white">team@inflection.org.in</span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 rounded-xl glass-panel">
-                <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+              <a
+                href="https://maps.app.goo.gl/dBqMwt4STbzpXYNb8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-xl glass-panel hover:border-emerald-500/40 transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 transition-transform">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
                   <span className="text-xs text-slate-400 block font-mono">HEADQUARTERS</span>
-                  <span className="text-sm font-bold text-white">Austin Tech Corridor, TX, USA</span>
+                  <span className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">
+                    Inflection ORG PVT LTD, Khamaria, Bhadohi, UP 221306
+                  </span>
+                  <span className="text-[10px] text-emerald-400 font-semibold block mt-0.5">
+                    📍 View on Google Maps ↗
+                  </span>
                 </div>
-              </div>
+              </a>
             </div>
 
             <div className="p-5 rounded-2xl glass-panel-glow border border-teal-500/30 flex items-center gap-3">
               <ShieldCheck className="w-8 h-8 text-teal-400 shrink-0" />
               <div className="text-xs text-slate-300">
                 <span className="font-bold text-white block text-sm">30-Day Money Back Guarantee</span>
-                Try AquaSense risk-free. Free shipping and 2-year full hardware warranty included.
+                Try Tanki Meter risk-free. Free shipping and 2-year full hardware warranty included.
               </div>
             </div>
           </div>

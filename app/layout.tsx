@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'AquaSense Pro - Smart Water Tank Monitoring & Automation',
-  description: 'Real-time water tank level monitoring, leak detection, automated pump control, and water usage analytics for smart homes & industrial facilities.',
-  keywords: 'smart water tank, water monitor, automated water pump, leak sensor, IoT water level',
+  title: 'Tanki Meter by Inflection - Smart IoT Water Pump Controller',
+  description: 'Fail-safe overlay water pump controller. Real-time float level sensing, dry-run protection, 230V AC voltage monitoring, and mobile app control.',
+  keywords: 'Tanki Meter, Inflection IoT, smart water tank, motor controller, dry run protection, water level sensor, float sensor',
 };
 
 export default function RootLayout({

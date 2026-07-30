@@ -8,18 +8,18 @@ export const HowItWorks = () => {
   const steps = [
     {
       number: '01',
-      title: 'Sensor Measures Water Depth',
-      description: 'The contactless ultrasonic sensor sends live water depth data to the controller in milliseconds.',
+      title: 'Float & String Level Sense',
+      desc: 'Tank-Top unit measures depth via float string and sends wireless 433 MHz RF pulses to Tank-Base.',
     },
     {
       number: '02',
-      title: 'Controller Analyzes Thresholds',
-      description: 'The smart controller evaluates your custom high and low trigger levels automatically.',
+      title: 'Base Analyzes PT/CT Limits',
+      desc: 'Tank-Base logic monitors live voltage (150-250V), current, and low/high depth thresholds.',
     },
     {
       number: '03',
-      title: 'Pump Switches Automatically',
-      description: 'The heavy-duty relay triggers the water pump ON when water is low and OFF before overflow.',
+      title: 'Fail-Safe 3-Relay Trigger',
+      desc: 'Triggers START1/START2 relays to start motor and STOP relay to shut off before overflow.',
     },
   ];
 
@@ -133,7 +133,7 @@ export const HowItWorks = () => {
               <div key={idx} className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
                 <span className="text-3xl font-black font-mono text-blue-200 block mb-2">{step.number}</span>
                 <h4 className="text-lg font-bold text-white mb-2">{step.title}</h4>
-                <p className="text-xs sm:text-sm text-blue-100/90 leading-relaxed">{step.description}</p>
+                <p className="text-xs sm:text-sm text-blue-100/90 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>

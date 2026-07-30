@@ -23,12 +23,12 @@ export const CallToAction = () => {
 
             {/* Heading */}
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Start Automating Your Water Tank Management Today
+              Start Automating Your Water Pump Today
             </h2>
 
             {/* Short Description */}
             <p className="text-blue-100 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              Order your AquaSmart IoT Controller kit now and get free express shipping, 2-year warranty, and 30-day money-back guarantee.
+              Order your Tanki Meter IoT kit by Inflection now — includes Tank-Base controller, Tank-Top RF unit, CT sensor, and 12V/9V adapters.
             </p>
 
             {/* "Get Started" Button */}
@@ -38,9 +38,9 @@ export const CallToAction = () => {
                 size="lg"
                 icon={ArrowRight}
                 className="bg-white text-blue-700 hover:bg-blue-50 shadow-xl"
-                onClick={() => alert('Order Placed Successfully! Your AquaSmart kit is on its way.')}
+                onClick={() => alert('Order Inquiry Placed! Contact support at team@inflection.org.in or +91 8900 900 815')}
               >
-                Get Started
+                Order Kit Now
               </Button>
             </div>
 

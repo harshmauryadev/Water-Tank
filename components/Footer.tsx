@@ -16,7 +16,7 @@ export const Footer = () => {
               <Waves className="w-5 h-5" />
             </div>
             <span className="text-xl font-extrabold text-slate-900">
-              Aqua<span className="text-blue-600">Smart</span>
+              Tanki<span className="text-blue-600">Meter</span>
             </span>
           </a>
 
@@ -24,8 +24,9 @@ export const Footer = () => {
           <div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-600">
             <a href="#product-showcase" className="hover:text-blue-600 transition">Showcase</a>
             <a href="#how-it-works" className="hover:text-blue-600 transition">How It Works</a>
+            <a href="#app-section" className="hover:text-blue-600 transition">Mobile App</a>
             <a href="#features" className="hover:text-blue-600 transition">Features</a>
-            <a href="#why-choose-us" className="hover:text-blue-600 transition">Why Choose Us</a>
+            <a href="#faq" className="hover:text-blue-600 transition">FAQ</a>
           </div>
 
           {/* Social Icons */}
@@ -65,7 +66,7 @@ export const Footer = () => {
         {/* Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <div>
-            © {new Date().getFullYear()} AquaSmart IoT Inc. All rights reserved. Designed for smart water conservation.
+            © {new Date().getFullYear()} Tanki Meter by Inflection. All rights reserved. team@inflection.org.in | +91 8900 900 815
           </div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-slate-800 transition">Privacy Policy</a>

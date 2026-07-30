@@ -9,28 +9,28 @@ export const FAQ = () => {
 
   const faqs = [
     {
-      question: 'Will AquaSense work on my specific water tank type?',
-      answer: 'Yes! AquaSense ultrasonic sensors work on plastic (HDPE), overhead PVC tanks, underground concrete sumps, stainless steel tanks, and rainwater harvesting drums up to 10 meters in depth.',
+      question: 'Does Tanki Meter replace my existing motor starter panel?',
+      answer: 'No! Tanki Meter is an add-on controller that sits alongside your starter panel (fail-safe overlay design). Your original physical start/stop buttons continue to work normally.',
     },
     {
-      question: 'How does the automatic motor pump switch work?',
-      answer: 'The AquaSense controller wire connects directly to your existing motor starter panel. When water drops below your custom Low limit (e.g. 25%), it engages the relay. Once the tank reaches your High limit (e.g. 95%), it automatically stops the motor.',
+      question: 'How do the Tank-Base and Tank-Top units communicate?',
+      answer: 'The Tank-Top unit (mounted on the water tank) communicates wirelessly with the Tank-Base unit over a 433 MHz RF radio link across hundreds of meters, requiring zero long wiring between your roof and starter panel.',
     },
     {
-      question: 'Can I install AquaSense myself without an electrician?',
-      answer: 'Yes. The sensor mounts on top of the tank using heavy-duty weather adhesive or screw brackets provided in the kit. The wireless hub connects automatically via Wi-Fi or cellular plugin.',
+      question: 'Do either of the units require batteries or solar panels?',
+      answer: 'No. The Tank-Base unit plugs into a 12V DC adapter and the Tank-Top unit plugs into a 9V DC adapter near the tank. Both require a continuous power point.',
     },
     {
-      question: 'What happens during a power cut or Wi-Fi outage?',
-      answer: 'AquaSense includes built-in non-volatile memory that retains all your settings and high/low safety cutoffs. Optional battery backup keeps the sensor actively tracking level even when main power is out.',
+      question: 'What automatic safety cutoffs are built into the device?',
+      answer: 'Tanki Meter automatically detects dry-run (low current), motor overload (high current), under-voltage (<150V), over-voltage (>250V), and auto-off timer limits. All safety rules run locally on the firmware even if Wi-Fi is offline.',
     },
     {
-      question: 'Is the sensor waterproof and outdoor weatherproof?',
-      answer: 'Absolutely. The sensor is IP67 industrial waterproof rated and UV resistant, designed to withstand extreme summer heat, heavy rainfall, and cold winters without degradation.',
+      question: 'How is the water level measured inside the tank?',
+      answer: 'The Tank-Top uses a non-contact float attached to a string inside the tank lid. As the float moves with the water level, the unit sends exact percentage depth data wirelessly.',
     },
     {
-      question: 'Are there any monthly subscription fees for the mobile app?',
-      answer: 'No! The basic mobile app tracking, instant push notifications, and motor automation are 100% free with lifetime access included with your hardware purchase.',
+      question: 'How do I set up the mobile app for remote monitoring?',
+      answer: 'Download the Tanki Meter app on Android, connect to the device\'s temporary setup Wi-Fi (TankiMeter-XXXX), enter your home Wi-Fi password, and setup is complete in less than 2 minutes.',
     },
   ];
 

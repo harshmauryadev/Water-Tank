@@ -25,19 +25,19 @@ export const Hero = () => {
 
             {/* Large Product Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.12]">
-              Smart Water Control. <br />
+              Tanki Meter IoT. <br />
               <span className="text-gradient-blue">Zero Effort. Zero Wastage.</span>
             </h1>
 
             {/* Small Description */}
             <p className="text-slate-600 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              Automate your water tank pump, prevent overflow disasters, protect against motor dry-runs, and monitor water levels live from your smartphone.
+              Fail-safe add-on controller for your existing pump starter. Non-contact float level sensing, dry-run & voltage safety cutoffs, and real-time smartphone dashboard.
             </p>
 
             {/* One "Buy Now" Button */}
             <div className="pt-2 flex justify-center lg:justify-start">
               <Button variant="primary" size="lg" icon={ArrowRight} onClick={() => window.location.href = '#cta'}>
-                Buy Now
+                Order Now
               </Button>
             </div>
 
@@ -45,7 +45,7 @@ export const Hero = () => {
             <div className="pt-6 border-t border-slate-200/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs font-semibold text-slate-600">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                <span>Plug & Play Setup</span>
+                <span>Fail-Safe Overlay Design</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-blue-600" />
@@ -53,7 +53,7 @@ export const Hero = () => {
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                <span>Free Express Delivery</span>
+                <span>433 MHz RF Tank-Top</span>
               </div>
             </div>
 
@@ -72,7 +72,7 @@ export const Hero = () => {
                     <Wifi className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs font-bold text-slate-900 block">Wi-Fi Connected</span>
+                    <span className="text-xs font-bold text-slate-900 block">Wi-Fi & RF Link</span>
                     <span className="text-[10px] text-emerald-600 font-semibold">● Cloud Active</span>
                   </div>
                 </div>
@@ -83,8 +83,8 @@ export const Hero = () => {
                     <Zap className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs font-bold text-slate-900 block">Smart Auto Relay</span>
-                    <span className="text-[10px] text-blue-600 font-semibold">Motor Auto Shutoff</span>
+                    <span className="text-xs font-bold text-slate-900 block">3-Relay Overlay</span>
+                    <span className="text-[10px] text-blue-600 font-semibold">START1 / START2 / STOP</span>
                   </div>
                 </div>
 
@@ -95,7 +95,7 @@ export const Hero = () => {
                   <div className="flex items-center justify-between pb-4 border-b border-slate-800">
                     <div className="flex items-center gap-2">
                       <Cpu className="w-4 h-4 text-blue-400" />
-                      <span className="text-xs font-bold text-slate-300 font-mono uppercase tracking-wider">AQUASMART CORE V2</span>
+                      <span className="text-xs font-bold text-slate-300 font-mono uppercase tracking-wider">TANKI METER BASE V1.0</span>
                     </div>
                     <span className="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold border border-emerald-500/30">
                       SYS ONLINE
@@ -104,11 +104,11 @@ export const Hero = () => {
 
                   {/* OLED Simulated Display Screen */}
                   <div className="my-6 p-5 rounded-2xl bg-slate-950 border border-blue-500/30 shadow-inner text-center relative">
-                    <div className="text-[11px] font-mono text-blue-400 uppercase tracking-widest mb-1">LIVE WATER TANK DEPTH</div>
+                    <div className="text-[11px] font-mono text-blue-400 uppercase tracking-widest mb-1">LIVE WATER LEVEL</div>
                     <div className="text-4xl sm:text-5xl font-extrabold text-white font-mono tracking-tight my-1">
                       85<span className="text-2xl text-blue-400">%</span>
                     </div>
-                    <div className="text-xs text-slate-400 font-mono">850 / 1000 Liters • Optimal</div>
+                    <div className="text-xs text-slate-400 font-mono">235.7 V • 0.0 A • 49.8 Hz</div>
                     
                     {/* Simulated Wave Fill Bar */}
                     <div className="mt-4 w-full h-2.5 bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-800">
@@ -120,10 +120,10 @@ export const Hero = () => {
                   <div className="grid grid-cols-2 gap-3 text-xs">
                     <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
                       <span className="text-[10px] text-slate-400 block font-mono">PUMP RELAY</span>
-                      <span className="font-bold text-blue-400">AUTO OFF</span>
+                      <span className="font-bold text-blue-400">IDLE / AUTO</span>
                     </div>
                     <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
-                      <span className="text-[10px] text-slate-400 block font-mono">OVERFLOW SAFETY</span>
+                      <span className="text-[10px] text-slate-400 block font-mono">SAFETY SYSTEM</span>
                       <span className="font-bold text-emerald-400">ACTIVE</span>
                     </div>
                   </div>

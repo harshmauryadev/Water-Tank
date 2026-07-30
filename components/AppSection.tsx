@@ -17,9 +17,9 @@ export const AppSection = () => {
             <SectionHeading
               align="left"
               badge="Mobile Dashboard"
-              title="Control Every Drop From the"
-              highlightedTitle="Palm of Your Hand"
-              subtitle="The AquaSense mobile app provides effortless remote management, custom threshold settings, and real-time tank graphics."
+              title="Real-Time Smartphone Control"
+              highlightedTitle="From Anywhere Globally"
+              subtitle="The Tanki Meter Android app by Inflection gives you quick pump actions, live electrical telemetry (Voltage, Current, Frequency), and safety configuration."
             />
 
             <div className="space-y-4 pt-2">
@@ -28,8 +28,8 @@ export const AppSection = () => {
                   <Bell className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-white">Smart Push & SMS Notifications</h4>
-                  <p className="text-xs sm:text-sm text-slate-400 mt-1">Get immediate alerts when water drops below 20% or reaches 100% full status.</p>
+                  <h4 className="text-base font-bold text-white">Quick Actions: Turn ON / OFF / Force ON</h4>
+                  <p className="text-xs sm:text-sm text-slate-400 mt-1">One-tap motor triggers with Force ON override mode for emergency top-ups.</p>
                 </div>
               </div>
 
@@ -38,8 +38,8 @@ export const AppSection = () => {
                   <SlidersHorizontal className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-white">Manual Override Motor Switch</h4>
-                  <p className="text-xs sm:text-sm text-slate-400 mt-1">Turn your motor pump ON or OFF with a single tap from anywhere globally.</p>
+                  <h4 className="text-base font-bold text-white">Electrical Telemetry & Voltage Protection</h4>
+                  <p className="text-xs sm:text-sm text-slate-400 mt-1">Live monitoring of 230V AC Voltage, Current (A), Active Power (W), and Frequency (49.8 Hz).</p>
                 </div>
               </div>
 
@@ -48,15 +48,15 @@ export const AppSection = () => {
                   <BarChart3 className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-white">Historical Usage Analytics</h4>
-                  <p className="text-xs sm:text-sm text-slate-400 mt-1">Analyze water consumption patterns, peak hours, and estimated municipal bills.</p>
+                  <h4 className="text-base font-bold text-white">Safety Limits & Sensor Calibration</h4>
+                  <p className="text-xs sm:text-sm text-slate-400 mt-1">Configure Auto-Off timers, Min/Max Voltage limits (180V–250V), and depth thresholds.</p>
                 </div>
               </div>
             </div>
 
             <div className="pt-4 flex flex-wrap gap-4">
-              <Button variant="primary" icon={Download}>
-                Download iOS & Android App
+              <Button variant="primary" icon={Download} onClick={() => window.open('https://play.google.com/store/apps/details?id=org.inflection.iot.tankimeter', '_blank')}>
+                Get Android App (Play Store)
               </Button>
             </div>
           </div>
@@ -71,46 +71,65 @@ export const AppSection = () => {
                 {/* Phone Speaker Notch */}
                 <div className="w-28 h-4 bg-slate-950 rounded-full mx-auto mb-4 border border-slate-800" />
 
-                {/* App Screen Content */}
-                <div className="bg-slate-950 rounded-[32px] p-5 border border-slate-800 space-y-5 text-left">
+                {/* App Screen Content (Matching user screenshot) */}
+                <div className="bg-[#0b1222] rounded-[32px] p-4 border border-slate-800 space-y-4 text-left font-sans">
                   
                   {/* App Header */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
                     <div>
-                      <span className="text-[10px] text-slate-400 uppercase font-mono">MAIN HOME TANK</span>
-                      <h5 className="text-base font-extrabold text-white">Overhead Tank #1</h5>
+                      <span className="text-[9px] text-blue-400 font-mono tracking-wider uppercase font-bold">TM-2607-0003</span>
+                      <h5 className="text-sm font-extrabold text-white">Tanki Meter Dashboard</h5>
                     </div>
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[9px] font-bold border border-emerald-500/40">
+                      LIVE • 4s ago
+                    </span>
                   </div>
 
-                  {/* Level Ring Graphic */}
-                  <div className="p-6 rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-teal-500/30 text-center relative overflow-hidden">
-                    <div className="text-xs text-teal-400 font-semibold mb-1">CURRENT WATER LEVEL</div>
-                    <div className="text-4xl font-black text-white font-mono">82%</div>
-                    <div className="text-[11px] text-slate-400 font-mono mt-1">820 / 1,000 Liters</div>
-                    
-                    {/* Simulated Wave fill inside card */}
-                    <div className="mt-4 w-full h-3 bg-slate-800 rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-teal-500 to-cyan-400 w-[82%]" />
+                  {/* Pump Status Banner */}
+                  <div className="p-3 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-between">
+                    <div>
+                      <span className="text-[9px] text-slate-400 block font-mono">PUMP STATUS</span>
+                      <span className="text-base font-black text-red-400">OFF</span>
+                    </div>
+                    <span className="text-xs text-slate-400 font-mono">Runtime: 0 min</span>
+                  </div>
+
+                  {/* 3 Quick Action Buttons */}
+                  <div className="grid grid-cols-3 gap-2 text-center text-[10px] font-bold text-white">
+                    <div className="p-2.5 rounded-xl bg-emerald-600 shadow-md">
+                      <span>Turn ON</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-red-600 shadow-md">
+                      <span>Turn OFF</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-purple-600 shadow-md">
+                      <span>Force ON</span>
                     </div>
                   </div>
 
-                  {/* Quick Controls inside App */}
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-center">
-                      <span className="text-[10px] text-slate-400 block">PUMP STATUS</span>
-                      <span className="text-xs font-bold text-emerald-400">IDLE (AUTO)</span>
+                  {/* Telemetry Tiles */}
+                  <div className="grid grid-cols-3 gap-2 text-white">
+                    <div className="p-2.5 rounded-xl bg-red-950/80 border border-red-900/60 text-center">
+                      <span className="text-[8px] text-slate-400 block font-mono">VOLTAGE</span>
+                      <span className="text-sm font-extrabold font-mono text-red-300">235.7 V</span>
                     </div>
-                    <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-center">
-                      <span className="text-[10px] text-slate-400 block">LAST REFILL</span>
-                      <span className="text-xs font-bold text-white">2h 15m ago</span>
+                    <div className="p-2.5 rounded-xl bg-red-950/80 border border-red-900/60 text-center">
+                      <span className="text-[8px] text-slate-400 block font-mono">CURRENT</span>
+                      <span className="text-sm font-extrabold font-mono text-red-300">0.00 A</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-red-950/80 border border-red-900/60 text-center">
+                      <span className="text-[8px] text-slate-400 block font-mono">POWER</span>
+                      <span className="text-sm font-extrabold font-mono text-red-300">0 W</span>
                     </div>
                   </div>
 
-                  {/* Alert banner inside app */}
-                  <div className="p-3 rounded-xl bg-teal-950/60 border border-teal-500/40 flex items-center justify-between text-xs">
-                    <span className="text-teal-300 font-medium">All Sensors Normal</span>
-                    <ShieldCheck className="w-4 h-4 text-teal-400" />
+                  {/* Tank Level & Info Footer */}
+                  <div className="p-3 rounded-2xl bg-blue-950/60 border border-blue-500/40 flex items-center justify-between">
+                    <div>
+                      <span className="text-[9px] text-blue-300 block font-mono">NETWORK (SSID)</span>
+                      <span className="text-xs font-bold text-white">Inflection (192.168.1.59)</span>
+                    </div>
+                    <ShieldCheck className="w-5 h-5 text-teal-400" />
                   </div>
 
                 </div>
