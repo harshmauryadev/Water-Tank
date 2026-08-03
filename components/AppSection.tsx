@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Smartphone, Bell, SlidersHorizontal, BarChart3, CheckCircle2, ShieldCheck, Download } from 'lucide-react';
+import { Smartphone, Bell, SlidersHorizontal, BarChart3, ShieldCheck, Download } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import Button from './Button';
 
@@ -71,7 +71,7 @@ export const AppSection = () => {
                 {/* Phone Speaker Notch */}
                 <div className="w-28 h-4 bg-slate-950 rounded-full mx-auto mb-4 border border-slate-800" />
 
-                {/* App Screen Content (Matching user screenshot) */}
+                {/* App Screen Content (Original dashboard photo) */}
                 <div className="bg-[#0b1222] rounded-[32px] p-4 border border-slate-800 space-y-4 text-left font-sans">
                   
                   {/* App Header */}
@@ -147,3 +147,4 @@ export const AppSection = () => {
 };
 
 export default AppSection;
+
