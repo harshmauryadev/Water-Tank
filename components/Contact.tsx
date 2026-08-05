@@ -23,9 +23,9 @@ export const Contact = () => {
   return (
     <section id="contact" className="py-24 relative overflow-hidden bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="grid lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Side: Contact Information */}
           <div className="lg:col-span-5 space-y-6">
             <SectionHeading
@@ -34,6 +34,7 @@ export const Contact = () => {
               title="Ready to Upgrade Your Water"
               highlightedTitle="Management?"
               subtitle="Fill out the form for a free consultation or custom bulk quote for apartment complexes, industrial plants, and commercial buildings."
+              dark={true}
             />
 
             <div className="space-y-4 pt-4">
@@ -43,7 +44,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <span className="text-xs text-slate-400 block font-mono">SUPPORT & SALES PHONE</span>
-                  <span className="text-sm font-bold text-white">+91 8900 900 815</span>
+                  <span className="text-sm font-bold text-white"> +91 8004787983 , +91 8900 900 815</span>
                 </div>
               </div>
 
@@ -106,14 +107,14 @@ export const Contact = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <h3 className="text-xl font-bold text-white mb-2">Request Hardware Quote</h3>
-                  
+
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label>
                       <input
                         type="text"
                         required
-                        placeholder="John Doe"
+                        placeholder="e.g. Rahul Sharma"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-400"
@@ -124,7 +125,7 @@ export const Contact = () => {
                       <input
                         type="email"
                         required
-                        placeholder="john@example.com"
+                        placeholder="rahul@inflection.org.in"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-400"
@@ -137,7 +138,7 @@ export const Contact = () => {
                       <label className="block text-xs font-semibold text-slate-300 mb-1.5">Phone Number</label>
                       <input
                         type="tel"
-                        placeholder="+1 (555) 000-0000"
+                        placeholder="+91 8004787983"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-400"

@@ -7,8 +7,12 @@ import Button from './Button';
 
 export const AppSection = () => {
   return (
-    <section id="app-section" className="py-24 relative overflow-hidden bg-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="app-section" className="py-24 relative overflow-hidden bg-gradient-to-b from-slate-50 via-blue-50/40 to-white">
+      {/* Background Soft Orbs */}
+      <div className="absolute top-1/3 left-10 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
@@ -20,36 +24,37 @@ export const AppSection = () => {
               title="Real-Time Smartphone Control"
               highlightedTitle="From Anywhere Globally"
               subtitle="The Tanki Meter Android app by Inflection gives you quick pump actions, live electrical telemetry (Voltage, Current, Frequency), and safety configuration."
+              dark={false}
             />
 
             <div className="space-y-4 pt-2">
-              <div className="flex items-start gap-4 p-4 rounded-xl glass-card border border-slate-800">
-                <div className="w-10 h-10 rounded-lg bg-teal-500/20 flex items-center justify-center shrink-0 text-teal-400">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
+                <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center shrink-0 text-blue-600 font-bold">
                   <Bell className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-white">Quick Actions: Turn ON / OFF / Force ON</h4>
-                  <p className="text-xs sm:text-sm text-slate-400 mt-1">One-tap motor triggers with Force ON override mode for emergency top-ups.</p>
+                  <h4 className="text-base font-bold text-slate-900">Quick Actions: Turn ON / OFF / Force ON</h4>
+                  <p className="text-xs sm:text-sm text-slate-600 mt-1">One-tap motor triggers with Force ON override mode for emergency top-ups.</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-xl glass-card border border-slate-800">
-                <div className="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center shrink-0 text-cyan-400">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
+                <div className="w-10 h-10 rounded-xl bg-cyan-100 flex items-center justify-center shrink-0 text-cyan-600">
                   <SlidersHorizontal className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-white">Electrical Telemetry & Voltage Protection</h4>
-                  <p className="text-xs sm:text-sm text-slate-400 mt-1">Live monitoring of 230V AC Voltage, Current (A), Active Power (W), and Frequency (49.8 Hz).</p>
+                  <h4 className="text-base font-bold text-slate-900">Electrical Telemetry & Voltage Protection</h4>
+                  <p className="text-xs sm:text-sm text-slate-600 mt-1">Live monitoring of 230V AC Voltage, Current (A), Active Power (W), and Frequency (49.8 Hz).</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-xl glass-card border border-slate-800">
-                <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center shrink-0 text-emerald-400">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
+                <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center shrink-0 text-indigo-600">
                   <BarChart3 className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-white">Safety Limits & Sensor Calibration</h4>
-                  <p className="text-xs sm:text-sm text-slate-400 mt-1">Configure Auto-Off timers, Min/Max Voltage limits (180V–250V), and depth thresholds.</p>
+                  <h4 className="text-base font-bold text-slate-900">Safety Limits & Sensor Calibration</h4>
+                  <p className="text-xs sm:text-sm text-slate-600 mt-1">Configure Auto-Off timers, Min/Max Voltage limits (180V–250V), and depth thresholds.</p>
                 </div>
               </div>
             </div>

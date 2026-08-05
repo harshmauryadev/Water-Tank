@@ -42,14 +42,14 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       }`}>
         {title}{' '}
         {highlightedTitle && (
-          <span className={dark ? 'text-blue-300' : 'text-gradient-blue'}>
+          <span className="bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-400 bg-clip-text text-transparent drop-shadow-xs">
             {highlightedTitle}
           </span>
         )}
       </h2>
       {subtitle && (
         <p className={`mt-4 text-base sm:text-lg leading-relaxed font-normal ${
-          dark ? 'text-blue-100/90' : 'text-slate-600'
+          dark ? 'text-slate-300' : 'text-slate-600'
         }`}>
           {subtitle}
         </p>

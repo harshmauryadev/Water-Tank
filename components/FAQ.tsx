@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
-import SectionHeading from './SectionHeading';
 
 export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -14,7 +13,7 @@ export const FAQ = () => {
     },
     {
       question: 'How do the Tank-Base and Tank-Top units communicate?',
-      answer: 'The Tank-Top unit (mounted on the water tank) communicates wirelessly with the Tank-Base unit over a 433 MHz RF radio link across hundreds of meters, requiring zero long wiring between your roof and starter panel.',
+      answer: 'The Tank-Top unit communicates wirelessly with the Tank-Base unit over a 433 MHz RF radio link across hundreds of meters, requiring zero wiring between your roof and starter panel.',
     },
     {
       question: 'Do either of the units require batteries or solar panels?',
@@ -22,7 +21,7 @@ export const FAQ = () => {
     },
     {
       question: 'What automatic safety cutoffs are built into the device?',
-      answer: 'Tanki Meter automatically detects dry-run (low current), motor overload (high current), under-voltage (<150V), over-voltage (>250V), and auto-off timer limits. All safety rules run locally on the firmware even if Wi-Fi is offline.',
+      answer: 'Tanki Meter automatically detects dry-run (low current), motor overload (high current), under-voltage (<150V), over-voltage (>250V), and auto-off timer limits. All safety rules run locally even if Wi-Fi is offline.',
     },
     {
       question: 'How is the water level measured inside the tank?',
@@ -39,43 +38,48 @@ export const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="py-24 relative bg-slate-950/60 border-t border-slate-900">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-20 bg-slate-50/70 relative border-t border-slate-200">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <SectionHeading
-          badge="Got Questions?"
-          title="Frequently Asked"
-          highlightedTitle="Questions"
-          subtitle="Everything you need to know about hardware compatibility, installation, and app control."
-        />
+        {/* Title */}
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            Frequently Asked <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Questions</span>
+          </h2>
+          <p className="text-slate-600 text-sm font-medium mt-2 max-w-xl mx-auto">
+            Everything you need to know about hardware compatibility, installation, and app control.
+          </p>
+          <div className="w-16 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full mx-auto mt-3 shadow-xs" />
+        </div>
 
-        <div className="mt-16 space-y-4">
+        {/* 2 Part / 2-Column Grid Layout */}
+        <div className="grid md:grid-cols-2 gap-6 items-start">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className={`glass-panel rounded-2xl transition-all duration-200 overflow-hidden ${
-                  isOpen ? 'border-teal-500/40 bg-slate-900/90' : 'hover:border-slate-700'
+                className={`bg-white border rounded-2xl transition-all duration-300 overflow-hidden shadow-xs hover:shadow-md ${
+                  isOpen ? 'border-blue-500 ring-2 ring-blue-500/10' : 'border-slate-200 hover:border-blue-300'
                 }`}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-slate-100 text-base md:text-lg focus:outline-none"
+                  className="w-full p-5 text-left flex items-start justify-between gap-3 focus:outline-none"
                 >
-                  <span className="flex items-center gap-3">
-                    <HelpCircle className="w-5 h-5 text-teal-400 shrink-0" />
+                  <span className="flex items-start gap-3 font-bold text-slate-900 text-sm sm:text-base leading-snug">
+                    <HelpCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-teal-400 shrink-0 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-blue-600 shrink-0 transition-transform duration-300 mt-0.5 ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-0 text-slate-300 text-sm md:text-base leading-relaxed border-t border-slate-800/60 mt-2">
+                  <div className="px-5 pb-5 pt-0 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100">
                     <p className="pt-3">{faq.answer}</p>
                   </div>
                 )}
@@ -90,3 +94,4 @@ export const FAQ = () => {
 };
 
 export default FAQ;
+

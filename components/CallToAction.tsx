@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ArrowRight, ShieldCheck, Truck, Headphones } from 'lucide-react';
-import Button from './Button';
+import Link from 'next/link';
 
 export const CallToAction = () => {
   return (
@@ -31,17 +31,15 @@ export const CallToAction = () => {
               Order your Tanki Meter IoT kit by Inflection now — includes Tank-Base controller, Tank-Top RF unit, CT sensor, and 12V/9V adapters.
             </p>
 
-            {/* "Get Started" Button */}
-            <div className="pt-4 flex justify-center">
-              <Button
-                variant="secondary"
-                size="lg"
-                icon={ArrowRight}
-                className="bg-white text-blue-700 hover:bg-blue-50 shadow-xl"
-                onClick={() => alert('Order Inquiry Placed! Contact support at team@inflection.org.in or +91 8900 900 815')}
+            {/* "Call Us Now" Button */}
+            <div className="pt-4 flex flex-wrap justify-center gap-4">
+              <a
+                href="tel:+918004787983"
+                className="inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-950 font-black text-base shadow-2xl shadow-cyan-500/30 hover:scale-[1.03] active:scale-[0.98] transition-all"
               >
-                Order Kit Now
-              </Button>
+                <span>Call Us Now (+91 8004787983)</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
             </div>
 
             {/* Guarantee Trust Badges */}
@@ -70,3 +68,4 @@ export const CallToAction = () => {
 };
 
 export default CallToAction;
+

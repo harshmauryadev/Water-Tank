@@ -27,10 +27,10 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variantStyles = {
-    primary: 'bg-blue-600 hover:bg-blue-700 text-white shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98]',
-    secondary: 'bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200/60 hover:border-blue-300',
-    outline: 'border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 hover:text-slate-900',
-    ghost: 'text-slate-600 hover:text-blue-600 hover:bg-blue-50/60',
+    primary: 'bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 hover:from-blue-700 hover:via-sky-600 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98]',
+    secondary: 'bg-gradient-to-r from-blue-50 to-cyan-50 text-blue-700 hover:from-blue-100 hover:to-cyan-100 border border-blue-200/80 hover:border-blue-300 shadow-xs',
+    outline: 'border-2 border-blue-500/80 bg-gradient-to-r from-blue-600/10 via-sky-500/10 to-cyan-500/10 text-blue-600 hover:bg-gradient-to-r hover:from-blue-600 hover:via-sky-500 hover:to-cyan-500 hover:text-white shadow-xs transition-all',
+    ghost: 'text-slate-700 hover:text-blue-600 hover:bg-blue-50/60',
   };
 
   return (

@@ -41,22 +41,12 @@ export const Features = () => {
   return (
     <section
       id="features"
-      className={`py-24 relative overflow-hidden transition-all duration-700 ${
-        autoMode
-          ? 'bg-slate-950 text-white'
-          : 'bg-slate-50 text-slate-900'
-      }`}
+      className="py-24 relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-blue-50/30 text-slate-900 transition-all duration-700"
     >
-      {/* Dynamic Background Glows when Auto Mode is ON */}
-      {autoMode ? (
-        <>
-          <div className="absolute top-1/4 left-10 w-96 h-96 bg-teal-500/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-        </>
-      ) : (
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-blue-100/60 rounded-full blur-3xl pointer-events-none" />
-      )}
+      {/* Dynamic Background Glows */}
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-200/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -66,6 +56,7 @@ export const Features = () => {
           title="Designed with 6 Premium"
           highlightedTitle="Smart Features"
           subtitle="Explore the live Configuration screen from your mobile app. Turn ON Auto Mode to experience instant full-system automation!"
+          dark={false}
         />
 
         {/* Top Special Banner: Auto Mode Master Status Bar */}
