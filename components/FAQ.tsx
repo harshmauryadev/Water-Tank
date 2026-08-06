@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
 export const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  // Support multiple FAQs open at once or toggling individual FAQs
+  const [openIndexes, setOpenIndexes] = useState<number[]>([0]);
 
   const faqs = [
     {
@@ -34,7 +35,9 @@ export const FAQ = () => {
   ];
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    setOpenIndexes((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
   };
 
   return (
@@ -55,7 +58,7 @@ export const FAQ = () => {
         {/* 2 Part / 2-Column Grid Layout */}
         <div className="grid md:grid-cols-2 gap-6 items-start">
           {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
+            const isOpen = openIndexes.includes(index);
             return (
               <div
                 key={index}
@@ -64,8 +67,10 @@ export const FAQ = () => {
                 }`}
               >
                 <button
+                  type="button"
                   onClick={() => toggleFAQ(index)}
-                  className="w-full p-5 text-left flex items-start justify-between gap-3 focus:outline-none"
+                  aria-expanded={isOpen}
+                  className="w-full p-5 text-left flex items-start justify-between gap-3 cursor-pointer focus:outline-none select-none"
                 >
                   <span className="flex items-start gap-3 font-bold text-slate-900 text-sm sm:text-base leading-snug">
                     <HelpCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
@@ -78,11 +83,17 @@ export const FAQ = () => {
                   />
                 </button>
 
-                {isOpen && (
-                  <div className="px-5 pb-5 pt-0 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100">
-                    <p className="pt-3">{faq.answer}</p>
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-5 pb-5 pt-0 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100">
+                      <p className="pt-3">{faq.answer}</p>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
@@ -94,4 +105,5 @@ export const FAQ = () => {
 };
 
 export default FAQ;
+
 

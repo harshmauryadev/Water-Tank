@@ -8,7 +8,6 @@ import {
   Timer,
   Zap,
   Activity,
-  ArrowUpRight,
   CheckCircle2,
   Power,
   ShieldCheck,
@@ -18,16 +17,20 @@ import {
   SlidersHorizontal,
   Smartphone,
   Cpu,
-  Flame,
   Radio,
-  Bell
+  Bell,
+  Users,
+  BarChart3,
+  Wrench,
+  Globe,
+  Award,
+  LifeBuoy
 } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
 export const Features = () => {
   const [autoMode, setAutoMode] = useState<boolean>(true);
   const [deviceName, setDeviceName] = useState<string>('TM-2607-0003');
-  const [isEditingName, setIsEditingName] = useState<boolean>(false);
 
   // Configuration parameters
   const [tankHeight, setTankHeight] = useState<number>(120);
@@ -37,6 +40,145 @@ export const Features = () => {
   const [minVoltage, setMinVoltage] = useState<number>(180);
   const [maxCurrent, setMaxCurrent] = useState<number>(10);
   const [minCurrent, setMinCurrent] = useState<number>(2);
+
+  // All 15 Key Features provided by user in pure English
+  const all15Features = [
+    {
+      id: 1,
+      title: '100% Wireless Freedom',
+      subtitle: 'True Wireless Autonomy',
+      desc: 'Forget wiring hassles! Our device works seamlessly across 5 to 10 floors without any roof-to-ground wires. No Wi-Fi or Internet is needed for daily automatic operation.',
+      icon: Radio,
+      badge: 'Wireless RF',
+      gradient: 'from-blue-600 to-indigo-600',
+    },
+    {
+      id: 2,
+      title: 'Patented Smart Sensor',
+      subtitle: 'High-Precision 2mm Sensor',
+      desc: 'Conventional metal/brass sensors corrode and clog with hard water scale, algae, or sand. Our patented sensor provides 2 mm accurate readings unaffected by hard water or algae.',
+      icon: Ruler,
+      badge: 'Patented Tech',
+      gradient: 'from-cyan-500 to-blue-600',
+    },
+    {
+      id: 3,
+      title: 'Zero Maintenance',
+      subtitle: 'Install & Forget',
+      desc: 'Install it once and stay 100% worry-free! Unlike traditional wired sensors, you will never need periodic servicing, cleaning, or extra maintenance charges.',
+      icon: CheckCircle2,
+      badge: '0 Servicing',
+      gradient: 'from-emerald-500 to-teal-600',
+    },
+    {
+      id: 4,
+      title: 'Continuous Multi-Mode Operation',
+      subtitle: 'Triple-Mode Resilience',
+      desc: 'Internet or no internet, your system never stops working! It automatically and smartly switches between Cloud Online, Local Hotspot, and Offline RF modes.',
+      icon: Cpu,
+      badge: 'Multi-Mode',
+      gradient: 'from-purple-600 to-indigo-600',
+    },
+    {
+      id: 5,
+      title: 'World-Wide Smart Control',
+      subtitle: 'Global Remote Access',
+      desc: 'Connect to your home Wi-Fi and control your motor from anywhere in the world via the smartphone app. Turn the pump ON/OFF and check live status anytime.',
+      icon: Globe,
+      badge: 'Global Cloud',
+      gradient: 'from-sky-500 to-blue-600',
+    },
+    {
+      id: 6,
+      title: 'Live Voltage & Current Protection',
+      subtitle: 'Smart Motor Safeguard',
+      desc: 'Monitors real-time line voltage and running motor current. Instantly trips motor power during dry run conditions, low voltage, voltage surges, or current overload.',
+      icon: Zap,
+      badge: 'Motor Guard',
+      gradient: 'from-amber-500 to-orange-600',
+    },
+    {
+      id: 7,
+      title: 'All-in-One Digital Dashboard',
+      subtitle: 'LCD & App Telemetry',
+      desc: 'Displays live water level percentage, AC line voltage, motor running current, wireless signal strength, and pump state on both the backlit LCD screen and mobile app.',
+      icon: SlidersHorizontal,
+      badge: 'Digital Screen',
+      gradient: 'from-teal-500 to-emerald-600',
+    },
+    {
+      id: 8,
+      title: 'Starter Perfect Sync',
+      subtitle: 'Smart Manual Override',
+      desc: 'Complete manual freedom! Turn the motor ON/OFF using physical starter buttons or device controls—both stay 100% synchronized in real time without conflict.',
+      icon: Power,
+      badge: 'Dual Sync',
+      gradient: 'from-indigo-500 to-blue-600',
+    },
+    {
+      id: 9,
+      title: 'Integrated Buzzer Alarm',
+      subtitle: 'Smart Beep Audio Alerts',
+      desc: 'Instant audio alerts during fault conditions! The built-in audio buzzer immediately alerts you with clear beep alarms during any dry-run, power trip, or error state.',
+      icon: Bell,
+      badge: 'Audio Alarm',
+      gradient: 'from-rose-500 to-red-600',
+    },
+    {
+      id: 10,
+      title: 'Family App Sharing',
+      subtitle: 'Multi-User Access',
+      desc: 'Share mobile app access with all family members so everyone in your home can monitor tank water levels and operate the pump controls effortlessly.',
+      icon: Users,
+      badge: 'Multi-User',
+      gradient: 'from-sky-600 to-cyan-600',
+    },
+    {
+      id: 11,
+      title: 'Power & Water Analytics',
+      subtitle: 'Monthly Usage Reports',
+      desc: 'Track your resource consumption! View detailed monthly reports on total water volume used and electricity units (kWh) consumed to optimize household costs.',
+      icon: BarChart3,
+      badge: 'Analytics',
+      gradient: 'from-emerald-600 to-teal-700',
+    },
+    {
+      id: 12,
+      title: 'Super-Easy Installation',
+      subtitle: 'Hassle-Free Setup',
+      desc: 'Quick and simple installation! Mounts easily alongside your existing motor starter panel in less than 15 minutes without complicated wiring or headaches.',
+      icon: Sparkles,
+      badge: 'Quick Setup',
+      gradient: 'from-amber-400 to-yellow-600',
+    },
+    {
+      id: 13,
+      title: 'Fail-Safe Auto Timer',
+      subtitle: 'Automatic Safety Cutoff',
+      desc: 'Double safety protection! Automatically turns off motor power after a pre-set runtime duration even if top sensor communication is lost to prevent water overflow.',
+      icon: Timer,
+      badge: 'Auto Cutoff',
+      gradient: 'from-red-500 to-rose-600',
+    },
+    {
+      id: 14,
+      title: 'Clear Warranty Policy',
+      subtitle: 'Full Hardware Protection',
+      desc: 'Complete peace of mind! Reliable official warranty policy protecting against internal hardware failures, relay issues, or wireless communication faults.',
+      icon: ShieldCheck,
+      badge: 'Full Warranty',
+      gradient: 'from-blue-600 to-cyan-600',
+    },
+    {
+      id: 15,
+      title: 'Post-Warranty Service Support',
+      subtitle: 'Lifetime Technical Care',
+      desc: 'No worries even after warranty expiration! On-demand paid technical service support and genuine hardware repairs remain available whenever you need it.',
+      icon: LifeBuoy,
+      badge: 'Paid Support',
+      gradient: 'from-slate-700 to-slate-900',
+    },
+  ];
 
   return (
     <section
@@ -52,14 +194,14 @@ export const Features = () => {
         
         {/* Section Header */}
         <SectionHeading
-          badge="Interactive Configuration & Features"
-          title="Designed with 6 Premium"
-          highlightedTitle="Smart Features"
-          subtitle="Explore the live Configuration screen from your mobile app. Turn ON Auto Mode to experience instant full-system automation!"
+          badge="15 Powerful Features"
+          title="Complete Smart Automation &"
+          highlightedTitle="Motor Safety Features"
+          subtitle="Explore all 15 advanced features designed to give you 100% wireless freedom, motor protection, and total control."
           dark={false}
         />
 
-        {/* Top Special Banner: Auto Mode Master Status Bar */}
+        {/* Master Auto Mode Banner */}
         <div
           className={`mt-10 p-4 sm:p-6 rounded-3xl border transition-all duration-500 flex flex-col md:flex-row items-center justify-between gap-6 ${
             autoMode
@@ -89,21 +231,22 @@ export const Features = () => {
                       : 'bg-slate-200 text-slate-600'
                   }`}
                 >
-                  {autoMode ? 'FULL SYSTEM AUTOMATION ACTIVE' : 'DISABLED'}
+                  {autoMode ? 'FULL AUTOMATION ACTIVE' : 'DISABLED'}
                 </span>
               </div>
               <p className={`text-xs sm:text-sm mt-1 ${autoMode ? 'text-teal-200' : 'text-slate-600'}`}>
                 {autoMode
-                  ? '⚡ Auto Mode is ON! Pump auto-trigger, tank level sensors, and all 4 safety guards are fully engaged.'
-                  : 'Auto Mode is OFF. Toggle the switch below to activate 100% hands-free control.'}
+                  ? '⚡ Auto Mode is ON! Tank level sensors, motor guards, and wireless communication are fully engaged.'
+                  : 'Auto Mode is OFF. Toggle switch to activate 100% hands-free control.'}
               </p>
             </div>
           </div>
 
           {/* Master Toggle Switch */}
           <button
+            type="button"
             onClick={() => setAutoMode(!autoMode)}
-            className={`px-6 py-3 rounded-2xl font-bold text-xs flex items-center gap-3 transition-all duration-300 shadow-lg shrink-0 ${
+            className={`px-6 py-3 rounded-2xl font-bold text-xs flex items-center gap-3 transition-all duration-300 shadow-lg shrink-0 cursor-pointer ${
               autoMode
                 ? 'bg-gradient-to-r from-teal-400 to-cyan-400 text-slate-950 shadow-teal-500/40 hover:scale-105'
                 : 'bg-slate-900 text-white hover:bg-slate-800'
@@ -114,10 +257,9 @@ export const Features = () => {
           </button>
         </div>
 
-        {/* Main Grid: Interactive Mobile App Mockup (Exact Screenshot UI) + 6 Feature Cards */}
+        {/* Live Configuration Mockup Section */}
         <div className="mt-14 grid lg:grid-cols-12 gap-10 items-start">
-          
-          {/* LEFT COLUMN: EXACT MOBILE CONFIGURATION SCREEN (FROM SCREENSHOT) */}
+          {/* Left Column Mobile Mockup */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="w-full max-w-sm">
               <div
@@ -132,7 +274,7 @@ export const Features = () => {
                   <div className="w-3 h-3 rounded-full bg-slate-900" />
                 </div>
 
-                {/* APP SCREEN CONTENT (EXACT UI FROM USER SCREENSHOT) */}
+                {/* APP SCREEN CONTENT */}
                 <div
                   className={`rounded-[32px] p-4 text-left font-sans transition-all duration-500 space-y-4 border ${
                     autoMode
@@ -140,32 +282,30 @@ export const Features = () => {
                       : 'bg-[#f4f7fc] border-slate-200 text-slate-900'
                   }`}
                 >
-                  {/* Top Mobile Header */}
                   <div className="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-800">
                     <div className="flex items-center gap-2">
                       <ChevronLeft className={`w-5 h-5 ${autoMode ? 'text-teal-400' : 'text-slate-700'}`} />
                       <h4 className={`text-base font-extrabold ${autoMode ? 'text-white' : 'text-slate-900'}`}>
-                        Configuration
+                        Live Configuration
                       </h4>
                     </div>
                   </div>
 
-                  {/* 1. GENERAL */}
                   <div>
                     <span className="text-[10px] font-bold font-mono tracking-wider text-slate-400 block mb-1.5 uppercase">
-                      GENERAL
+                      AUTOMATION
                     </span>
                     <div className={`p-3 rounded-2xl flex items-center justify-between border ${
-                      autoMode ? 'bg-slate-900/90 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900 shadow-xs'
+                      autoMode ? 'bg-slate-900 border-teal-500/40 text-white' : 'bg-white border-slate-200 text-slate-900'
                     }`}>
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-xl bg-teal-500/15 text-teal-400 flex items-center justify-center">
-                          <Edit3 className="w-4 h-4" />
+                          <Sparkles className="w-4 h-4" />
                         </div>
                         <div>
-                          <span className="text-[10px] text-slate-400 block font-sans">Device Name</span>
-                          <span className={`text-xs font-bold font-mono ${autoMode ? 'text-teal-300' : 'text-slate-900'}`}>
-                            {deviceName}
+                          <span className="text-xs font-bold block">Auto Mode Engine</span>
+                          <span className="text-[10px] text-teal-400 font-mono">
+                            {autoMode ? 'System Autonomous' : 'Manual Overridden'}
                           </span>
                         </div>
                       </div>
@@ -173,140 +313,28 @@ export const Features = () => {
                     </div>
                   </div>
 
-                  {/* 2. AUTOMATION (AUTO MODE TOGGLE) */}
-                  <div>
-                    <span className="text-[10px] font-bold font-mono tracking-wider text-teal-400 block mb-1.5 uppercase">
-                      AUTOMATION
-                    </span>
-                    <div
-                      className={`p-3.5 rounded-2xl border transition-all duration-300 flex items-center justify-between ${
-                        autoMode
-                          ? 'bg-gradient-to-r from-teal-950 via-slate-900 to-cyan-950 border-teal-400/80 shadow-md'
-                          : 'bg-white border-slate-200 shadow-xs'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all ${
-                            autoMode ? 'bg-teal-400 text-slate-950 font-bold' : 'bg-slate-100 text-slate-400'
-                          }`}
-                        >
-                          <Sparkles className={`w-4 h-4 ${autoMode ? 'animate-spin' : ''}`} style={{ animationDuration: '6s' }} />
-                        </div>
-                        <div>
-                          <h5 className={`text-xs font-extrabold ${autoMode ? 'text-white' : 'text-slate-900'}`}>
-                            Auto Mode
-                          </h5>
-                          <span className={`text-[10px] font-mono ${autoMode ? 'text-teal-300 font-bold' : 'text-slate-500'}`}>
-                            {autoMode ? 'Enabled' : 'Disabled'}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Switch */}
-                      <button
-                        onClick={() => setAutoMode(!autoMode)}
-                        className={`w-12 h-7 rounded-full p-1 transition-all flex items-center ${
-                          autoMode ? 'bg-teal-400 justify-end' : 'bg-slate-300 justify-start'
-                        }`}
-                      >
-                        <div className="w-5 h-5 rounded-full bg-white shadow-sm" />
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* 3. TANK SETTINGS */}
                   <div>
                     <span className="text-[10px] font-bold font-mono tracking-wider text-slate-400 block mb-1.5 uppercase">
-                      TANK SETTINGS
+                      LIVE PROTECTION PARAMETERS
                     </span>
-                    <div className="space-y-2">
-                      <div className={`p-3 rounded-2xl flex items-center justify-between border ${
-                        autoMode ? 'bg-slate-900/90 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900 shadow-xs'
+                    <div className="space-y-2 text-xs">
+                      <div className={`p-2.5 rounded-xl flex items-center justify-between border ${
+                        autoMode ? 'bg-slate-900/90 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900'
                       }`}>
-                        <div className="flex items-center gap-3">
-                          <div className="w-7 h-7 rounded-lg bg-sky-500/15 text-sky-400 flex items-center justify-center">
-                            <Ruler className="w-3.5 h-3.5" />
-                          </div>
-                          <span className="text-xs font-bold">Total Tank Height</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <span className="text-xs font-extrabold font-mono text-sky-400">{tankHeight} cm</span>
-                          <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-                        </div>
+                        <span className="font-semibold">Voltage Limits</span>
+                        <span className="font-mono text-sky-400 font-bold">{minVoltage}V - {maxVoltage}V</span>
                       </div>
-
-                      <div className={`p-3 rounded-2xl flex items-center justify-between border ${
-                        autoMode ? 'bg-slate-900/90 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900 shadow-xs'
+                      <div className={`p-2.5 rounded-xl flex items-center justify-between border ${
+                        autoMode ? 'bg-slate-900/90 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900'
                       }`}>
-                        <div className="flex items-center gap-3">
-                          <div className="w-7 h-7 rounded-lg bg-cyan-500/15 text-cyan-400 flex items-center justify-center">
-                            <ArrowDownToLine className="w-3.5 h-3.5" />
-                          </div>
-                          <span className="text-xs font-bold">Low Level Threshold</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <span className="text-xs font-extrabold font-mono text-cyan-400">{lowLevelThreshold} %</span>
-                          <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-                        </div>
+                        <span className="font-semibold">Current Protection</span>
+                        <span className="font-mono text-cyan-400 font-bold">{minCurrent}A - {maxCurrent}A</span>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* 4. SAFETY LIMITS */}
-                  <div>
-                    <span className="text-[10px] font-bold font-mono tracking-wider text-slate-400 block mb-1.5 uppercase">
-                      SAFETY LIMITS
-                    </span>
-                    <div className="space-y-1.5">
-                      <div className={`p-2.5 rounded-xl flex items-center justify-between border text-xs ${
-                        autoMode ? 'bg-slate-900/90 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900 shadow-xs'
+                      <div className={`p-2.5 rounded-xl flex items-center justify-between border ${
+                        autoMode ? 'bg-slate-900/90 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900'
                       }`}>
-                        <div className="flex items-center gap-2.5">
-                          <Timer className="w-3.5 h-3.5 text-amber-400" />
-                          <span className="font-semibold">Auto-Off Timer</span>
-                        </div>
-                        <span className="font-mono font-bold text-sky-400">{autoOffTimer} min ›</span>
-                      </div>
-
-                      <div className={`p-2.5 rounded-xl flex items-center justify-between border text-xs ${
-                        autoMode ? 'bg-slate-900/90 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900 shadow-xs'
-                      }`}>
-                        <div className="flex items-center gap-2.5">
-                          <Zap className="w-3.5 h-3.5 text-amber-400" />
-                          <span className="font-semibold">Max Voltage</span>
-                        </div>
-                        <span className="font-mono font-bold text-sky-400">{maxVoltage} V ›</span>
-                      </div>
-
-                      <div className={`p-2.5 rounded-xl flex items-center justify-between border text-xs ${
-                        autoMode ? 'bg-slate-900/90 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900 shadow-xs'
-                      }`}>
-                        <div className="flex items-center gap-2.5">
-                          <Zap className="w-3.5 h-3.5 text-amber-400" />
-                          <span className="font-semibold">Min Voltage</span>
-                        </div>
-                        <span className="font-mono font-bold text-sky-400">{minVoltage} V ›</span>
-                      </div>
-
-                      <div className={`p-2.5 rounded-xl flex items-center justify-between border text-xs ${
-                        autoMode ? 'bg-slate-900/90 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900 shadow-xs'
-                      }`}>
-                        <div className="flex items-center gap-2.5">
-                          <Activity className="w-3.5 h-3.5 text-amber-400" />
-                          <span className="font-semibold">Max Current</span>
-                        </div>
-                        <span className="font-mono font-bold text-sky-400">{maxCurrent} A ›</span>
-                      </div>
-
-                      <div className={`p-2.5 rounded-xl flex items-center justify-between border text-xs ${
-                        autoMode ? 'bg-slate-900/90 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900 shadow-xs'
-                      }`}>
-                        <div className="flex items-center gap-2.5">
-                          <Activity className="w-3.5 h-3.5 text-amber-400" />
-                          <span className="font-semibold">Min Current</span>
-                        </div>
-                        <span className="font-mono font-bold text-sky-400">{minCurrent} A ›</span>
+                        <span className="font-semibold">Failsafe Auto Timer</span>
+                        <span className="font-mono text-amber-400 font-bold">{autoOffTimer} mins</span>
                       </div>
                     </div>
                   </div>
@@ -315,155 +343,84 @@ export const Features = () => {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: 6 PREMIUM FEATURE CARDS EXPLAINING EACH CONFIGURATION */}
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
-            
-            {/* FEATURE 1: AUTO MODE (SPECIAL HIGH HIGHLIGHT) */}
-            <div
-              className={`rounded-3xl p-6 border transition-all duration-500 flex flex-col justify-between sm:col-span-2 ${
-                autoMode
-                  ? 'bg-gradient-to-br from-teal-950 via-slate-900 to-cyan-950 border-teal-400 shadow-xl shadow-teal-500/20'
-                  : 'bg-white border-slate-200 shadow-sm'
-              }`}
-            >
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold ${
-                      autoMode ? 'bg-teal-400 text-slate-950 shadow-lg shadow-teal-400/50' : 'bg-slate-100 text-slate-600'
-                    }`}
-                  >
-                    <Sparkles className={`w-6 h-6 ${autoMode ? 'animate-spin' : ''}`} style={{ animationDuration: '6s' }} />
-                  </div>
-                  <span
-                    className={`text-[10px] font-bold px-3 py-1 rounded-full font-mono uppercase tracking-wider ${
-                      autoMode
-                        ? 'bg-teal-500/20 text-teal-300 border border-teal-500/40 animate-pulse'
-                        : 'bg-slate-100 text-slate-600'
-                    }`}
-                  >
-                    {autoMode ? '✨ EVERYTHING ACTIVATED' : 'STANDBY'}
-                  </span>
+          {/* Right Column Brief Overview */}
+          <div className="lg:col-span-7 flex flex-col justify-center">
+            <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
+              <span className="text-xs font-extrabold text-blue-600 uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+                Complete System Capabilities
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mt-4 tracking-tight">
+                Smart Automation Built For Reliability
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed mt-3">
+                Tanki Meter is engineered to deliver zero-maintenance water level sensing and complete pump motor protection. Below is the breakdown of all 15 core features included with every Tanki Meter kit.
+              </p>
+              
+              <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 text-center">
+                  <div className="text-lg font-black text-blue-600">100%</div>
+                  <div className="text-[11px] text-slate-500 font-bold">Wireless RF</div>
                 </div>
-
-                <h4 className={`text-xl font-extrabold ${autoMode ? 'text-white' : 'text-slate-900'}`}>
-                  1. Smart Auto Mode (Master Switch)
-                </h4>
-                <p className={`text-xs sm:text-sm mt-2 leading-relaxed ${autoMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                  Turning Auto Mode ON activates the entire IoT system: tank depth sensing, low-level auto pump start (&lt;20%), full tank auto-stop, and 4-layer electrical protection guards simultaneously!
-                </p>
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 text-center">
+                  <div className="text-lg font-black text-cyan-600">2 mm</div>
+                  <div className="text-[11px] text-slate-500 font-bold">Accuracy</div>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 text-center">
+                  <div className="text-lg font-black text-emerald-600">0</div>
+                  <div className="text-[11px] text-slate-500 font-bold">Maintenance</div>
+                </div>
               </div>
-
-              {autoMode && (
-                <div className="mt-4 pt-3 border-t border-teal-500/30 flex items-center justify-between text-xs text-teal-300 font-mono">
-                  <span>⚡ Tanki Meter IoT Autonomous Engine Active</span>
-                  <CheckCircle2 className="w-4 h-4 text-teal-400" />
-                </div>
-              )}
             </div>
+          </div>
+        </div>
 
-            {/* FEATURE 2: TANK HEIGHT */}
-            <div
-              className={`rounded-3xl p-6 border transition-all duration-300 flex flex-col justify-between ${
-                autoMode
-                  ? 'bg-slate-900/90 border-slate-800 text-white'
-                  : 'bg-white border-slate-200 text-slate-900 shadow-sm'
-              }`}
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-sky-500/15 text-sky-400 flex items-center justify-center mb-4">
-                  <Ruler className="w-5 h-5" />
-                </div>
-                <h4 className="text-base font-extrabold mb-1">2. Total Tank Height ({tankHeight} cm)</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Calibrate your exact overhead tank height (120 cm) so RF float sensors accurately measure remaining water volume.
-                </p>
-              </div>
-              <span className="text-[10px] font-mono text-sky-400 font-bold mt-4 block">TANK SETTING</span>
-            </div>
-
-            {/* FEATURE 3: LOW LEVEL THRESHOLD */}
-            <div
-              className={`rounded-3xl p-6 border transition-all duration-300 flex flex-col justify-between ${
-                autoMode
-                  ? 'bg-slate-900/90 border-slate-800 text-white'
-                  : 'bg-white border-slate-200 text-slate-900 shadow-sm'
-              }`}
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center mb-4">
-                  <ArrowDownToLine className="w-5 h-5" />
-                </div>
-                <h4 className="text-base font-extrabold mb-1">3. Low Level Trigger ({lowLevelThreshold}%)</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Auto Mode starts the water pump instantly as soon as water level drops to 20% capacity.
-                </p>
-              </div>
-              <span className="text-[10px] font-mono text-cyan-400 font-bold mt-4 block">AUTO PUMP TRIGGER</span>
-            </div>
-
-            {/* FEATURE 4: VOLTAGE PROTECTION (MIN & MAX) */}
-            <div
-              className={`rounded-3xl p-6 border transition-all duration-300 flex flex-col justify-between ${
-                autoMode
-                  ? 'bg-slate-900/90 border-slate-800 text-white'
-                  : 'bg-white border-slate-200 text-slate-900 shadow-sm'
-              }`}
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center mb-4">
-                  <Zap className="w-5 h-5" />
-                </div>
-                <h4 className="text-base font-extrabold mb-1">4. Voltage Protection ({minVoltage}V - {maxVoltage}V)</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Monitors AC mains line. Cuts motor power if voltage drops below 180V or surges past 250V.
-                </p>
-              </div>
-              <span className="text-[10px] font-mono text-amber-400 font-bold mt-4 block">VOLTAGE GUARD</span>
-            </div>
-
-            {/* FEATURE 5: CURRENT OVERLOAD & DRY RUN (MIN & MAX) */}
-            <div
-              className={`rounded-3xl p-6 border transition-all duration-300 flex flex-col justify-between ${
-                autoMode
-                  ? 'bg-slate-900/90 border-slate-800 text-white'
-                  : 'bg-white border-slate-200 text-slate-900 shadow-sm'
-              }`}
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-indigo-500/15 text-indigo-400 flex items-center justify-center mb-4">
-                  <Activity className="w-5 h-5" />
-                </div>
-                <h4 className="text-base font-extrabold mb-1">5. Current & Dry-Run ({minCurrent}A - {maxCurrent}A)</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  CT sensor trips motor if current falls below 2A (dry run / zero water) or exceeds 10A (overload).
-                </p>
-              </div>
-              <span className="text-[10px] font-mono text-indigo-400 font-bold mt-4 block">AMPERAGE GUARD</span>
-            </div>
-
-            {/* FEATURE 6: AUTO-OFF TIMER */}
-            <div
-              className={`rounded-3xl p-6 border transition-all duration-300 flex flex-col justify-between sm:col-span-2 ${
-                autoMode
-                  ? 'bg-slate-900/90 border-slate-800 text-white'
-                  : 'bg-white border-slate-200 text-slate-900 shadow-sm'
-              }`}
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-rose-500/15 text-rose-400 flex items-center justify-center mb-4">
-                  <Timer className="w-5 h-5" />
-                </div>
-                <h4 className="text-base font-extrabold mb-1">6. Failsafe Auto-Off Timer ({autoOffTimer} min)</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Safety timer automatically stops motor after 20 minutes of continuous runtime to prevent pipe burst accidents and electricity loss.
-                </p>
-              </div>
-              <span className="text-[10px] font-mono text-rose-400 font-bold mt-4 block">SAFETY TIMER</span>
-            </div>
-
+        {/* 15 ALL-FEATURE CARDS GRID SHOWCASE */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
+              All <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">15 Key Features</span> Detailed
+            </h3>
+            <p className="text-slate-600 text-xs sm:text-sm mt-1 max-w-xl mx-auto">
+              Comprehensive breakdown of hardware, wireless autonomy, app telemetry, and safety guards.
+            </p>
           </div>
 
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {all15Features.map((item) => {
+              const IconComp = item.icon;
+              return (
+                <div
+                  key={item.id}
+                  className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-blue-300 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                >
+                  <div>
+                    {/* Header Row */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.gradient} text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300`}>
+                        <IconComp className="w-6 h-6" />
+                      </div>
+                      <span className="text-[10px] font-bold font-mono px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 border border-slate-200">
+                        {item.badge}
+                      </span>
+                    </div>
+
+                    {/* Title & Subtitle */}
+                    <span className="text-[11px] font-bold text-blue-600 tracking-wider uppercase block mb-1">
+                      {item.id}. {item.subtitle}
+                    </span>
+                    <h4 className="text-base font-extrabold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      {item.title}
+                    </h4>
+
+                    {/* Description */}
+                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
       </div>
@@ -472,3 +429,4 @@ export const Features = () => {
 };
 
 export default Features;
+
