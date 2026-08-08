@@ -47,18 +47,18 @@ export const WhyChoose = () => {
   ];
 
   return (
-    <section id="why-choose" className="py-20 bg-slate-50/50">
+    <section id="why-choose" className="py-20 bg-gradient-to-b from-[#050914] via-[#091124] to-[#050914] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-            Why Choose <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Tanki Meter</span>?
+          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+            Why Choose <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Tanki Meter</span>?
           </h2>
-          <p className="text-slate-600 text-sm font-medium mt-2 max-w-xl mx-auto">
+          <p className="text-slate-300 text-sm font-medium mt-2 max-w-xl mx-auto">
             Experience real benefits designed for ultimate water savings and total peace of mind.
           </p>
-          <div className="w-16 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full mx-auto mt-3 shadow-xs" />
+          <div className="w-16 h-1.5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto mt-3 shadow-xs" />
         </div>
 
         {/* 5 Real Image Cards Row */}
@@ -67,7 +67,7 @@ export const WhyChoose = () => {
             return (
               <div
                 key={idx}
-                className={`bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-xl ${item.borderHover} hover:-translate-y-1.5 transition-all duration-300 flex flex-col group overflow-hidden`}
+                className={`bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-xl hover:shadow-cyan-500/10 ${item.borderHover} hover:-translate-y-1.5 transition-all duration-300 flex flex-col group overflow-hidden`}
               >
                 {/* Real Image Container */}
                 <div className="relative h-44 w-full rounded-xl overflow-hidden mb-4 shadow-xs">
@@ -76,7 +76,7 @@ export const WhyChoose = () => {
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
                   
                   {/* Badge on Image */}
                   <span className={`absolute bottom-2.5 left-2.5 text-[10px] font-bold text-white px-2.5 py-1 rounded-md backdrop-blur-md ${item.badgeBg} shadow-sm tracking-wide`}>
@@ -84,11 +84,11 @@ export const WhyChoose = () => {
                   </span>
                 </div>
 
-                <h3 className="text-base font-extrabold text-slate-900 mb-1.5 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-base font-extrabold text-white mb-1.5 group-hover:text-cyan-400 transition-colors">
                   {item.title}
                 </h3>
 
-                <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                <p className="text-xs text-slate-300 leading-relaxed font-medium">
                   {item.desc}
                 </p>
               </div>

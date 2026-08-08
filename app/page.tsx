@@ -14,7 +14,7 @@ import FloatingCallButton from '@/components/FloatingCallButton';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-slate-900 overflow-x-hidden antialiased">
+    <main className="min-h-screen bg-[#050914] text-slate-100 overflow-x-hidden antialiased">
       <Navbar />
       <Hero />
       <ProductShowcase />

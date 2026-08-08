@@ -51,6 +51,7 @@ export const Features = () => {
       icon: Radio,
       badge: 'Wireless RF',
       gradient: 'from-blue-600 to-indigo-600',
+      image: '/images/features/wireless_freedom.png',
     },
     {
       id: 2,
@@ -60,6 +61,7 @@ export const Features = () => {
       icon: Ruler,
       badge: 'Patented Tech',
       gradient: 'from-cyan-500 to-blue-600',
+      image: '/images/features/patented_sensor.png',
     },
     {
       id: 3,
@@ -69,6 +71,7 @@ export const Features = () => {
       icon: CheckCircle2,
       badge: '0 Servicing',
       gradient: 'from-emerald-500 to-teal-600',
+      image: '/images/features/zero_maintenance.png',
     },
     {
       id: 4,
@@ -78,6 +81,7 @@ export const Features = () => {
       icon: Cpu,
       badge: 'Multi-Mode',
       gradient: 'from-purple-600 to-indigo-600',
+      image: '/images/features/multimode_operation.png',
     },
     {
       id: 5,
@@ -87,6 +91,7 @@ export const Features = () => {
       icon: Globe,
       badge: 'Global Cloud',
       gradient: 'from-sky-500 to-blue-600',
+      image: '/images/features/global_control.png',
     },
     {
       id: 6,
@@ -96,6 +101,7 @@ export const Features = () => {
       icon: Zap,
       badge: 'Motor Guard',
       gradient: 'from-amber-500 to-orange-600',
+      image: '/images/features/voltage_protection.png',
     },
     {
       id: 7,
@@ -411,6 +417,17 @@ export const Features = () => {
                     <h4 className="text-base font-extrabold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                       {item.title}
                     </h4>
+
+                    {/* Feature Image Thumbnail (If available) */}
+                    {item.image && (
+                      <div className="my-3 relative h-36 w-full rounded-xl overflow-hidden shadow-xs border border-slate-200">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    )}
 
                     {/* Description */}
                     <p className="text-xs text-slate-600 leading-relaxed font-medium">

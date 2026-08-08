@@ -36,35 +36,35 @@ export const HowItWorks = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 bg-gradient-to-b from-white via-sky-50/50 to-blue-50/30 border-y border-blue-100/60 relative overflow-hidden">
+    <section id="how-it-works" className="py-20 bg-gradient-to-b from-[#050914] via-[#091124] to-[#050914] border-y border-slate-800/80 relative overflow-hidden text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-            How It <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Works</span>
+          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+            How It <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Works</span>
           </h2>
-          <div className="w-16 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full mx-auto mt-3 shadow-xs" />
+          <div className="w-16 h-1.5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto mt-3 shadow-xs" />
         </div>
 
         {/* 4-Step Vibrant Diagram Row */}
-        <div className="max-w-5xl mx-auto bg-white/90 backdrop-blur-xl border border-blue-100 rounded-3xl p-6 sm:p-10 shadow-xl shadow-blue-900/5">
+        <div className="max-w-5xl mx-auto bg-slate-900/90 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-3">
             
             {steps.map((s, index) => {
               const IconComponent = s.icon;
               return (
                 <React.Fragment key={index}>
-                  <div className={`flex flex-col items-center text-center p-4 w-full md:w-1/4 rounded-2xl ${s.bgLight} border ${s.borderLight} hover:scale-105 transition-all duration-300 shadow-sm group`}>
+                  <div className="flex flex-col items-center text-center p-4 w-full md:w-1/4 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-cyan-500/50 hover:scale-105 transition-all duration-300 shadow-md group">
                     <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${s.gradient} text-white flex items-center justify-center mb-3 shadow-md group-hover:rotate-6 transition-transform`}>
                       <IconComponent className="w-7 h-7" />
                     </div>
-                    <span className="text-xs font-extrabold text-slate-800 leading-tight">{s.step}</span>
+                    <span className="text-xs font-extrabold text-slate-200 leading-tight">{s.step}</span>
                   </div>
 
                   {/* Arrow divider */}
                   {index < steps.length - 1 && (
-                    <div className="hidden md:flex items-center justify-center text-blue-400 font-bold">
+                    <div className="hidden md:flex items-center justify-center text-cyan-400 font-bold">
                       <ArrowRight className="w-6 h-6 animate-pulse" />
                     </div>
                   )}
@@ -74,9 +74,18 @@ export const HowItWorks = () => {
 
           </div>
 
+          {/* Real System Diagram Image Banner */}
+          <div className="mt-8 relative rounded-2xl overflow-hidden border border-slate-800 shadow-xl bg-slate-950 flex justify-center items-center p-3 group">
+            <img
+              src="/images/how-it-works.png"
+              alt="Tanki Meter How It Works Complete System Flow Diagram"
+              className="w-full h-auto max-h-[320px] object-contain rounded-xl transform group-hover:scale-102 transition-transform duration-500"
+            />
+          </div>
+
           {/* Subtext description & Explore More CTA */}
-          <div className="mt-10 pt-8 border-t border-slate-100 space-y-5">
-            <p className="text-sm font-medium text-slate-600 text-center max-w-2xl mx-auto leading-relaxed">
+          <div className="mt-10 pt-8 border-t border-slate-800 space-y-5">
+            <p className="text-sm font-medium text-slate-300 text-center max-w-2xl mx-auto leading-relaxed">
               Tanki Meter uses advanced sensors and smart logic to automate your water tank efficiently. No more manual checking!
             </p>
 

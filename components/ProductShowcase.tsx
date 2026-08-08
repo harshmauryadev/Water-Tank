@@ -93,17 +93,18 @@ export const ProductShowcase = () => {
                 <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
               </div>
 
-              {/* Center Simulated Hardware Screen Graphic */}
-              <div className="my-6 bg-slate-950 p-5 rounded-2xl border border-blue-500/40 shadow-inner text-center relative">
-                <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest mb-1">LIVE TELEMETRY SENSOR DATA</div>
-                <div className="text-4xl font-extrabold text-white font-mono tracking-tight my-1">
-                  85<span className="text-2xl text-cyan-400">%</span>
-                </div>
-                <div className="text-xs text-slate-400 font-mono">235.7V AC • 0.00A • 50.0 Hz</div>
+              {/* Real Hardware Image Visual Container */}
+              <div className="my-5 bg-slate-950/90 p-3 rounded-2xl border border-blue-500/40 shadow-inner text-center relative overflow-hidden group/img">
+                <img
+                  src="/images/tanki-meter-device.png"
+                  alt="Tanki Meter IoT Hardware Device"
+                  className="w-full h-44 object-contain rounded-xl transform group-hover/img:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
                 
-                {/* Visual Level Bar */}
-                <div className="mt-3 w-full h-2.5 bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-800">
-                  <div className="h-full bg-gradient-to-r from-blue-600 via-sky-400 to-cyan-300 rounded-full w-[85%]" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono text-cyan-300 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800 backdrop-blur-md">
+                  <span>LIVE SENSOR TELEMETRY</span>
+                  <span className="text-emerald-400 font-bold">235.7V AC</span>
                 </div>
               </div>
 
@@ -120,7 +121,7 @@ export const ProductShowcase = () => {
               </div>
 
               <div className="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                <span>WARRANTY: 2 YEARS</span>
+                <span>WARRANTY: 1 YEAR</span>
                 <span className="text-cyan-400 font-bold">100% FAIL-SAFE</span>
               </div>
 

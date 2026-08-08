@@ -83,7 +83,7 @@ export const Contact = () => {
               <ShieldCheck className="w-8 h-8 text-teal-400 shrink-0" />
               <div className="text-xs text-slate-300">
                 <span className="font-bold text-white block text-sm">30-Day Money Back Guarantee</span>
-                Try Tanki Meter risk-free. Free shipping and 2-year full hardware warranty included.
+                Try Tanki Meter risk-free. Free shipping and 1-year full hardware warranty included.
               </div>
             </div>
           </div>

@@ -50,7 +50,7 @@ export const CallToAction = () => {
               </div>
               <div className="flex items-center justify-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-white" />
-                <span>2 Year Full Warranty</span>
+                <span>1 Year Full Warranty</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <Headphones className="w-4 h-4 text-white" />
