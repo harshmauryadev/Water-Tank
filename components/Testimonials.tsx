@@ -38,7 +38,7 @@ export const Testimonials = () => {
       role: 'Hotel Operations Lead',
       location: 'Jaipur, Rajasthan',
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80',
-      comment: 'Setup took less than 15 minutes! The non-contact ultrasonic sensor accuracy is over 99%. It is by far the best automation solution for commercial sumps and overhead tanks.',
+      comment: 'Setup took less than 15 minutes! The long-range wireless RF link connects seamlessly without any rooftop-to-ground wiring. The patented 2mm sensor precision and motor dry-run cutoff make it the best smart automation solution for commercial tanks.',
       rating: 5,
       verified: true,
       tag: 'Commercial Hotel',
@@ -105,10 +105,10 @@ export const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-24 relative bg-slate-950 overflow-hidden">
+    <section id="testimonials" className="py-24 relative bg-[#F8FAFC] text-[#0F172A] overflow-hidden border-t border-slate-200">
       {/* Background Lighting Effects */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[300px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[300px] bg-teal-500/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[300px] bg-[#0EA5E9]/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[300px] bg-[#14B8A6]/10 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -117,26 +117,26 @@ export const Testimonials = () => {
           title="Loved by 10,000+ Indian Homeowners"
           highlightedTitle="& Society Managers"
           subtitle="See how Tanki Meter has transformed water conservation and hassle-free motor automation across India."
-          dark={true}
+          dark={false}
         />
 
         {/* Stats Row */}
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-3xl bg-slate-900/80 border border-slate-800 text-center shadow-xl backdrop-blur-md">
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-3xl bg-white border border-slate-200 text-center shadow-md">
           <div>
-            <div className="text-2xl md:text-3xl font-black text-white">10,000+</div>
-            <div className="text-xs text-slate-400 font-bold mt-1">Tanks Automated</div>
+            <div className="text-2xl md:text-3xl font-black text-[#0F172A]">10,000+</div>
+            <div className="text-xs text-[#64748B] font-bold mt-1">Tanks Automated</div>
           </div>
           <div>
-            <div className="text-2xl md:text-3xl font-black text-teal-400">15M+ Litres</div>
-            <div className="text-xs text-slate-400 font-bold mt-1">Water Saved</div>
+            <div className="text-2xl md:text-3xl font-black text-[#14B8A6]">15M+ Litres</div>
+            <div className="text-xs text-[#64748B] font-bold mt-1">Water Saved</div>
           </div>
           <div>
-            <div className="text-2xl md:text-3xl font-black text-amber-400">4.9 ★★★★★</div>
-            <div className="text-xs text-slate-400 font-bold mt-1">Customer Rating</div>
+            <div className="text-2xl md:text-3xl font-black text-amber-500">4.9 ★★★★★</div>
+            <div className="text-xs text-[#64748B] font-bold mt-1">Customer Rating</div>
           </div>
           <div>
-            <div className="text-2xl md:text-3xl font-black text-cyan-400">99.8%</div>
-            <div className="text-xs text-slate-400 font-bold mt-1">Measurement Accuracy</div>
+            <div className="text-2xl md:text-3xl font-black text-[#0EA5E9]">99.8%</div>
+            <div className="text-xs text-[#64748B] font-bold mt-1">Measurement Accuracy</div>
           </div>
         </div>
 
@@ -155,14 +155,14 @@ export const Testimonials = () => {
               {reviews.slice(0, 3).map((review, index) => (
                 <div
                   key={index}
-                  className={`bg-slate-900/90 border ${review.accentColor} rounded-3xl p-7 flex flex-col justify-between relative group shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 backdrop-blur-xl h-full`}
+                  className="bg-white border border-slate-200 rounded-3xl p-7 flex flex-col justify-between relative group shadow-sm hover:shadow-xl hover:border-[#0EA5E9] transition-all duration-300 hover:-translate-y-1.5 h-full"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className={`text-[11px] font-bold px-3 py-1 rounded-full border ${review.badgeBg}`}>
+                      <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-[#0EA5E9]/10 text-[#0284C7] border border-[#0EA5E9]/20">
                         {review.tag}
                       </span>
-                      <Quote className="w-7 h-7 text-slate-700 group-hover:text-cyan-400/60 transition-colors" />
+                      <Quote className="w-7 h-7 text-slate-300 group-hover:text-[#0EA5E9] transition-colors" />
                     </div>
 
                     <div className="flex items-center gap-1 text-amber-400 mb-4">
@@ -171,28 +171,28 @@ export const Testimonials = () => {
                       ))}
                     </div>
 
-                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 font-medium">
+                    <p className="text-[#64748B] text-xs sm:text-sm leading-relaxed mb-6 font-medium">
                       "{review.comment}"
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-3.5 pt-4 border-t border-slate-800/80">
+                  <div className="flex items-center gap-3.5 pt-4 border-t border-slate-100">
                     <img
                       src={review.avatar}
                       alt={review.name}
-                      className="w-11 h-11 rounded-2xl object-cover border-2 border-slate-700 group-hover:border-cyan-400/80 transition-colors shadow-md"
+                      className="w-11 h-11 rounded-2xl object-cover border-2 border-slate-200 group-hover:border-[#0EA5E9] transition-colors shadow-sm"
                     />
                     <div>
                       <div className="flex items-center gap-1.5">
-                        <h4 className="text-sm font-black text-white">{review.name}</h4>
+                        <h4 className="text-sm font-black text-[#0F172A]">{review.name}</h4>
                         {review.verified && (
-                          <span className="inline-flex items-center text-teal-400" title="Verified Customer">
-                            <CheckCircle className="w-3.5 h-3.5 fill-teal-400/20 text-teal-400 shrink-0" />
+                          <span className="inline-flex items-center text-[#14B8A6]" title="Verified Customer">
+                            <CheckCircle className="w-3.5 h-3.5 fill-[#14B8A6]/20 text-[#14B8A6] shrink-0" />
                           </span>
                         )}
                       </div>
-                      <p className="text-[11px] text-slate-400 font-medium">{review.role}</p>
-                      <p className="text-[10px] text-cyan-400 font-bold">{review.location}</p>
+                      <p className="text-[11px] text-[#64748B] font-medium">{review.role}</p>
+                      <p className="text-[10px] text-[#0284C7] font-bold">{review.location}</p>
                     </div>
                   </div>
                 </div>
@@ -204,14 +204,14 @@ export const Testimonials = () => {
               {reviews.slice(3, 6).map((review, index) => (
                 <div
                   key={index + 3}
-                  className={`bg-slate-900/90 border ${review.accentColor} rounded-3xl p-7 flex flex-col justify-between relative group shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 backdrop-blur-xl h-full`}
+                  className="bg-white border border-slate-200 rounded-3xl p-7 flex flex-col justify-between relative group shadow-sm hover:shadow-xl hover:border-[#0EA5E9] transition-all duration-300 hover:-translate-y-1.5 h-full"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className={`text-[11px] font-bold px-3 py-1 rounded-full border ${review.badgeBg}`}>
+                      <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-[#0EA5E9]/10 text-[#0284C7] border border-[#0EA5E9]/20">
                         {review.tag}
                       </span>
-                      <Quote className="w-7 h-7 text-slate-700 group-hover:text-cyan-400/60 transition-colors" />
+                      <Quote className="w-7 h-7 text-slate-300 group-hover:text-[#0EA5E9] transition-colors" />
                     </div>
 
                     <div className="flex items-center gap-1 text-amber-400 mb-4">
@@ -220,28 +220,28 @@ export const Testimonials = () => {
                       ))}
                     </div>
 
-                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 font-medium">
+                    <p className="text-[#64748B] text-xs sm:text-sm leading-relaxed mb-6 font-medium">
                       "{review.comment}"
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-3.5 pt-4 border-t border-slate-800/80">
+                  <div className="flex items-center gap-3.5 pt-4 border-t border-slate-100">
                     <img
                       src={review.avatar}
                       alt={review.name}
-                      className="w-11 h-11 rounded-2xl object-cover border-2 border-slate-700 group-hover:border-cyan-400/80 transition-colors shadow-md"
+                      className="w-11 h-11 rounded-2xl object-cover border-2 border-slate-200 group-hover:border-[#0EA5E9] transition-colors shadow-sm"
                     />
                     <div>
                       <div className="flex items-center gap-1.5">
-                        <h4 className="text-sm font-black text-white">{review.name}</h4>
+                        <h4 className="text-sm font-black text-[#0F172A]">{review.name}</h4>
                         {review.verified && (
-                          <span className="inline-flex items-center text-teal-400" title="Verified Customer">
-                            <CheckCircle className="w-3.5 h-3.5 fill-teal-400/20 text-teal-400 shrink-0" />
+                          <span className="inline-flex items-center text-[#14B8A6]" title="Verified Customer">
+                            <CheckCircle className="w-3.5 h-3.5 fill-[#14B8A6]/20 text-[#14B8A6] shrink-0" />
                           </span>
                         )}
                       </div>
-                      <p className="text-[11px] text-slate-400 font-medium">{review.role}</p>
-                      <p className="text-[10px] text-cyan-400 font-bold">{review.location}</p>
+                      <p className="text-[11px] text-[#64748B] font-medium">{review.role}</p>
+                      <p className="text-[10px] text-[#0284C7] font-bold">{review.location}</p>
                     </div>
                   </div>
                 </div>
@@ -255,7 +255,7 @@ export const Testimonials = () => {
           <button
             type="button"
             onClick={handlePrev}
-            className="w-10 h-10 rounded-full bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:border-cyan-400 flex items-center justify-center transition-all shadow-md active:scale-95 cursor-pointer"
+            className="w-10 h-10 rounded-full bg-white border border-slate-200 text-[#0F172A] hover:text-[#0EA5E9] hover:border-[#0EA5E9] flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer"
             aria-label="Previous Reviews"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -269,7 +269,7 @@ export const Testimonials = () => {
                 type="button"
                 onClick={() => setCurrentIndex(idx)}
                 className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentIndex === idx ? 'w-8 bg-gradient-to-r from-teal-400 to-cyan-400' : 'w-2.5 bg-slate-800 hover:bg-slate-700'
+                  currentIndex === idx ? 'w-8 bg-gradient-to-r from-[#0EA5E9] to-[#14B8A6]' : 'w-2.5 bg-slate-200 hover:bg-slate-300'
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
@@ -279,7 +279,7 @@ export const Testimonials = () => {
           <button
             type="button"
             onClick={handleNext}
-            className="w-10 h-10 rounded-full bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:border-cyan-400 flex items-center justify-center transition-all shadow-md active:scale-95 cursor-pointer"
+            className="w-10 h-10 rounded-full bg-white border border-slate-200 text-[#0F172A] hover:text-[#0EA5E9] hover:border-[#0EA5E9] flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer"
             aria-label="Next Reviews"
           >
             <ChevronRight className="w-5 h-5" />

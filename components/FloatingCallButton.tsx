@@ -49,9 +49,9 @@ export const FloatingCallButton = () => {
 
         {/* Floating Circular Button Container with Pulsing Ripple Effect */}
         <div className="relative flex items-center justify-center">
-          <span className="absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75 animate-ping" />
+          <span className="absolute inline-flex h-full w-full rounded-full bg-[#0EA5E9] opacity-75 animate-ping" />
           
-          <div className="relative w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600 text-white flex items-center justify-center shadow-2xl border-2 border-white/90 hover:scale-110 active:scale-95 transition-transform duration-200">
+          <div className="relative w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-[#0EA5E9] via-[#0284C7] to-[#14B8A6] text-white flex items-center justify-center shadow-2xl border-2 border-white/90 hover:scale-110 active:scale-95 transition-transform duration-200">
             <PhoneCall className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse text-white" />
           </div>
         </div>

@@ -32,8 +32,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className="min-h-screen bg-[#050914] text-slate-100 antialiased selection:bg-teal-500 selection:text-white">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body
+        className="min-h-screen bg-[#F8FAFC] text-[#0F172A] antialiased selection:bg-[#14B8A6] selection:text-white"
+        suppressHydrationWarning
+      >
         {children}
         <FloatingSocialSidebar />
         <PWAInstaller />

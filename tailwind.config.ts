@@ -13,22 +13,35 @@ const config: Config = {
         sans: ['Space Grotesk', 'sans-serif'],
       },
       colors: {
-        brand: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554',
+        primary: '#0EA5E9',       // Ocean Blue
+        secondary: '#0284C7',     // Deep Aqua
+        accent: '#14B8A6',        // Teal
+        background: '#F8FAFC',    // Soft White
+        card: '#FFFFFF',          // White
+        mainText: '#0F172A',      // Deep Navy
+        secondaryText: '#64748B', // Slate
+
+        ocean: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0EA5E9', // Ocean Blue (Primary)
+          600: '#0284C7', // Deep Aqua (Secondary)
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
         },
-        slate: {
-          900: '#0f172a',
-        }
+        oceanBlue: '#0EA5E9',
+        deepAqua: '#0284C7',
+        tealAccent: '#14B8A6',
+        accentTeal: '#14B8A6',
+        softBg: '#F8FAFC',
+        softWhite: '#F8FAFC',
+        cardWhite: '#FFFFFF',
+        deepNavy: '#0F172A',
+        slateSub: '#64748B',
       },
       borderRadius: {
         '2xl': '1rem',

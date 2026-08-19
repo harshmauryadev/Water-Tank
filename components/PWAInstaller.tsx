@@ -61,20 +61,20 @@ export default function PWAInstaller() {
   if (isInstalled || !showInstallBanner) return null;
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 max-w-sm w-full p-4 rounded-2xl bg-slate-900/95 border border-cyan-500/40 text-white shadow-2xl backdrop-blur-xl animate-in slide-in-from-bottom duration-300">
+    <div className="fixed bottom-5 right-5 z-50 max-w-sm w-full p-4 rounded-2xl bg-[#0F172A]/95 border border-[#0EA5E9]/40 text-white shadow-2xl backdrop-blur-xl animate-in slide-in-from-bottom duration-300">
       <div className="flex items-start justify-between gap-3">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white shrink-0 shadow-md">
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#0EA5E9] via-[#0284C7] to-[#14B8A6] flex items-center justify-center text-white shrink-0 shadow-md">
           <Smartphone className="w-5 h-5" />
         </div>
         <div className="flex-1">
           <h4 className="text-xs font-black text-white">Install Tanki Meter App</h4>
-          <p className="text-[11px] text-slate-300 mt-0.5 leading-snug">
+          <p className="text-[11px] text-[#64748B] mt-0.5 leading-snug">
             Add to your home screen for quick offline water monitoring & instant controls.
           </p>
           <div className="mt-2.5 flex items-center gap-2">
             <button
               onClick={handleInstallClick}
-              className="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 text-white text-[11px] font-bold flex items-center gap-1.5 shadow-md active:scale-95 transition-all"
+              className="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-[#0EA5E9] via-[#0284C7] to-[#14B8A6] hover:from-[#0284C7] hover:to-[#14B8A6] text-white text-[11px] font-bold flex items-center gap-1.5 shadow-md active:scale-95 transition-all"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Install App</span>

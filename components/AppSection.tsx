@@ -6,11 +6,24 @@ import SectionHeading from './SectionHeading';
 import Button from './Button';
 
 export const AppSection = () => {
+  const [pumpState, setPumpState] = React.useState<'AUTO' | 'ON' | 'OFF' | 'FORCE'>('AUTO');
+  const [powerWatts, setPowerWatts] = React.useState('0.0 W');
+
+  const handlePumpControl = (mode: 'ON' | 'OFF' | 'FORCE') => {
+    setPumpState(mode);
+    if (mode === 'ON') {
+      setPowerWatts('746.5 W');
+    } else if (mode === 'FORCE') {
+      setPowerWatts('752.0 W');
+    } else {
+      setPowerWatts('0.0 W');
+    }
+  };
   return (
-    <section id="app-section" className="py-24 relative overflow-hidden bg-gradient-to-b from-slate-50 via-blue-50/40 to-white">
+    <section id="app-section" className="py-24 relative overflow-hidden bg-[#F8FAFC]">
       {/* Background Soft Orbs */}
-      <div className="absolute top-1/3 left-10 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#0EA5E9]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#14B8A6]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -28,33 +41,33 @@ export const AppSection = () => {
             />
 
             <div className="space-y-4 pt-2">
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
-                <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center shrink-0 text-blue-600 font-bold">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:shadow-md hover:border-[#0EA5E9] transition-all">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center shrink-0 text-[#0EA5E9] font-bold">
                   <Bell className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-slate-900">Quick Actions: Turn ON / OFF / Force ON</h4>
-                  <p className="text-xs sm:text-sm text-slate-600 mt-1">One-tap motor triggers with Force ON override mode for emergency top-ups.</p>
+                  <h4 className="text-base font-bold text-[#0F172A]">Quick Actions: Turn ON / OFF / Force ON</h4>
+                  <p className="text-xs sm:text-sm text-[#64748B] mt-1">One-tap motor triggers with Force ON override mode for emergency top-ups.</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
-                <div className="w-10 h-10 rounded-xl bg-cyan-100 flex items-center justify-center shrink-0 text-cyan-600">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:shadow-md hover:border-[#0EA5E9] transition-all">
+                <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center shrink-0 text-[#14B8A6]">
                   <SlidersHorizontal className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-slate-900">Electrical Telemetry & Voltage Protection</h4>
-                  <p className="text-xs sm:text-sm text-slate-600 mt-1">Live monitoring of 230V AC Voltage, Current (A), Active Power (W), and Frequency (49.8 Hz).</p>
+                  <h4 className="text-base font-bold text-[#0F172A]">Electrical Telemetry & Voltage Protection</h4>
+                  <p className="text-xs sm:text-sm text-[#64748B] mt-1">Live monitoring of 230V AC Voltage, Current (A), Active Power (W), and Frequency (49.8 Hz).</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
-                <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center shrink-0 text-indigo-600">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:shadow-md hover:border-[#0EA5E9] transition-all">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center shrink-0 text-[#0284C7]">
                   <BarChart3 className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-slate-900">Safety Limits & Sensor Calibration</h4>
-                  <p className="text-xs sm:text-sm text-slate-600 mt-1">Configure Auto-Off timers, Min/Max Voltage limits (180V–250V), and depth thresholds.</p>
+                  <h4 className="text-base font-bold text-[#0F172A]">Safety Limits & Sensor Calibration</h4>
+                  <p className="text-xs sm:text-sm text-[#64748B] mt-1">Configure Auto-Off timers, Min/Max Voltage limits (180V–250V), and depth thresholds.</p>
                 </div>
               </div>
             </div>
@@ -134,9 +147,15 @@ export const AppSection = () => {
                       <div className="flex items-center justify-between">
                         <div>
                           <span className="text-[7px] sm:text-[8px] text-slate-400 block font-mono">PUMP STATE</span>
-                          <span className="text-[10px] sm:text-xs font-black text-emerald-400">AUTO (IDLE)</span>
+                          <span className={`text-[10px] sm:text-xs font-black ${
+                            pumpState === 'ON' ? 'text-emerald-400' : pumpState === 'OFF' ? 'text-red-400' : pumpState === 'FORCE' ? 'text-purple-400' : 'text-emerald-400'
+                          }`}>
+                            {pumpState === 'AUTO' ? 'AUTO (IDLE)' : pumpState === 'ON' ? 'RUNNING (ON)' : pumpState === 'OFF' ? 'STOPPED (OFF)' : 'FORCE OVERRIDE'}
+                          </span>
                         </div>
-                        <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                        <div className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full ${
+                          pumpState === 'OFF' ? 'bg-red-400' : 'bg-emerald-400 animate-ping'
+                        }`} />
                       </div>
                       <div className="grid grid-cols-2 gap-1 pt-1 border-t border-slate-800 text-[8px] sm:text-[9px]">
                         <div>
@@ -145,7 +164,7 @@ export const AppSection = () => {
                         </div>
                         <div>
                           <span className="text-slate-400 block text-[7px] sm:text-[8px]">Power</span>
-                          <span className="font-mono font-bold text-cyan-300">0.0 W</span>
+                          <span className="font-mono font-bold text-cyan-300">{powerWatts}</span>
                         </div>
                       </div>
                     </div>
@@ -154,13 +173,31 @@ export const AppSection = () => {
                     <div>
                       <span className="text-[7px] sm:text-[8px] font-mono text-slate-400 uppercase tracking-wider block mb-1">MOTOR CONTROLS</span>
                       <div className="grid grid-cols-3 gap-1 text-center text-[8px] sm:text-[9px] font-extrabold text-white">
-                        <button className="py-1.5 sm:py-2 px-0.5 rounded-lg sm:rounded-xl bg-gradient-to-b from-emerald-500 to-emerald-700 shadow-md">
+                        <button
+                          type="button"
+                          onClick={() => handlePumpControl('ON')}
+                          className={`py-1.5 sm:py-2 px-0.5 rounded-lg sm:rounded-xl bg-gradient-to-b from-emerald-500 to-emerald-700 shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer ${
+                            pumpState === 'ON' ? 'ring-2 ring-emerald-300' : ''
+                          }`}
+                        >
                           ON
                         </button>
-                        <button className="py-1.5 sm:py-2 px-0.5 rounded-lg sm:rounded-xl bg-gradient-to-b from-red-500 to-red-700 shadow-md">
+                        <button
+                          type="button"
+                          onClick={() => handlePumpControl('OFF')}
+                          className={`py-1.5 sm:py-2 px-0.5 rounded-lg sm:rounded-xl bg-gradient-to-b from-red-500 to-red-700 shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer ${
+                            pumpState === 'OFF' ? 'ring-2 ring-red-300' : ''
+                          }`}
+                        >
                           OFF
                         </button>
-                        <button className="py-1.5 sm:py-2 px-0.5 rounded-lg sm:rounded-xl bg-gradient-to-b from-purple-500 to-purple-700 shadow-md">
+                        <button
+                          type="button"
+                          onClick={() => handlePumpControl('FORCE')}
+                          className={`py-1.5 sm:py-2 px-0.5 rounded-lg sm:rounded-xl bg-gradient-to-b from-purple-500 to-purple-700 shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer ${
+                            pumpState === 'FORCE' ? 'ring-2 ring-purple-300' : ''
+                          }`}
+                        >
                           FORCE
                         </button>
                       </div>

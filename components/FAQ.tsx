@@ -41,18 +41,18 @@ export const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-slate-50/70 relative border-t border-slate-200">
+    <section id="faq" className="py-20 bg-[#F8FAFC] relative border-t border-slate-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-            Frequently Asked <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Questions</span>
+          <h2 className="text-3xl sm:text-4xl font-black text-[#0F172A] tracking-tight">
+            Frequently Asked <span className="bg-gradient-to-r from-[#0EA5E9] via-[#0284C7] to-[#14B8A6] bg-clip-text text-transparent">Questions</span>
           </h2>
-          <p className="text-slate-600 text-sm font-medium mt-2 max-w-xl mx-auto">
+          <p className="text-[#64748B] text-sm font-medium mt-2 max-w-xl mx-auto">
             Everything you need to know about hardware compatibility, installation, and app control.
           </p>
-          <div className="w-16 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full mx-auto mt-3 shadow-xs" />
+          <div className="w-16 h-1.5 bg-gradient-to-r from-[#0EA5E9] to-[#14B8A6] rounded-full mx-auto mt-3 shadow-xs" />
         </div>
 
         {/* 2 Part / 2-Column Grid Layout */}
@@ -63,7 +63,7 @@ export const FAQ = () => {
               <div
                 key={index}
                 className={`bg-white border rounded-2xl transition-all duration-300 overflow-hidden shadow-xs hover:shadow-md ${
-                  isOpen ? 'border-blue-500 ring-2 ring-blue-500/10' : 'border-slate-200 hover:border-blue-300'
+                  isOpen ? 'border-[#0EA5E9] ring-2 ring-[#0EA5E9]/10' : 'border-slate-200 hover:border-[#0EA5E9]'
                 }`}
               >
                 <button
@@ -72,28 +72,22 @@ export const FAQ = () => {
                   aria-expanded={isOpen}
                   className="w-full p-5 text-left flex items-start justify-between gap-3 cursor-pointer focus:outline-none select-none"
                 >
-                  <span className="flex items-start gap-3 font-bold text-slate-900 text-sm sm:text-base leading-snug">
-                    <HelpCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span className="flex items-start gap-3 font-bold text-[#0F172A] text-sm sm:text-base leading-snug">
+                    <HelpCircle className="w-5 h-5 text-[#0EA5E9] shrink-0 mt-0.5" />
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-blue-600 shrink-0 transition-transform duration-300 mt-0.5 ${
+                    className={`w-5 h-5 text-[#0EA5E9] shrink-0 transition-transform duration-300 mt-0.5 ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
 
-                <div
-                  className={`grid transition-all duration-300 ease-in-out ${
-                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    <div className="px-5 pb-5 pt-0 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100">
-                      <p className="pt-3">{faq.answer}</p>
-                    </div>
+                {isOpen && (
+                  <div className="px-5 pb-5 pt-0 text-[#64748B] text-xs sm:text-sm leading-relaxed border-t border-slate-100 animate-in fade-in duration-200">
+                    <p className="pt-3">{faq.answer}</p>
                   </div>
-                </div>
+                )}
               </div>
             );
           })}

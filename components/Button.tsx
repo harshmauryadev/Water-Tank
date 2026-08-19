@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { LucideIcon } from 'lucide-react';
 
@@ -18,7 +20,7 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseStyles = 'inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-full focus:outline-none focus:ring-2 focus:ring-[#0EA5E9] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
 
   const sizeStyles = {
     sm: 'px-5 py-2.5 text-xs gap-1.5',
@@ -27,10 +29,10 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variantStyles = {
-    primary: 'bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 hover:from-blue-700 hover:via-sky-600 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98]',
-    secondary: 'bg-gradient-to-r from-blue-50 to-cyan-50 text-blue-700 hover:from-blue-100 hover:to-cyan-100 border border-blue-200/80 hover:border-blue-300 shadow-xs',
-    outline: 'border-2 border-blue-500/80 bg-gradient-to-r from-blue-600/10 via-sky-500/10 to-cyan-500/10 text-blue-600 hover:bg-gradient-to-r hover:from-blue-600 hover:via-sky-500 hover:to-cyan-500 hover:text-white shadow-xs transition-all',
-    ghost: 'text-slate-700 hover:text-blue-600 hover:bg-blue-50/60',
+    primary: 'bg-gradient-to-r from-[#0EA5E9] via-[#0284C7] to-[#14B8A6] hover:from-[#0284C7] hover:to-[#14B8A6] text-white shadow-lg shadow-[#0EA5E9]/25 hover:shadow-[#0EA5E9]/40 hover:scale-[1.02] active:scale-[0.98]',
+    secondary: 'bg-gradient-to-r from-sky-50 to-teal-50 text-[#0284C7] hover:from-sky-100 hover:to-teal-100 border border-[#0EA5E9]/30 shadow-xs',
+    outline: 'border-2 border-[#0EA5E9] bg-[#0EA5E9]/10 text-[#0284C7] hover:bg-gradient-to-r hover:from-[#0EA5E9] hover:to-[#14B8A6] hover:text-white shadow-xs transition-all',
+    ghost: 'text-[#0F172A] hover:text-[#0EA5E9] hover:bg-sky-50',
   };
 
   return (
