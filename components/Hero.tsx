@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ShoppingCart, ChevronRight, Wifi, Zap, ShieldCheck, RefreshCw, Smartphone, Bell, Droplet, Sparkles } from 'lucide-react';
+import { ChevronRight, Wifi, ShieldCheck, RefreshCw, Smartphone, Droplet, Sparkles } from 'lucide-react';
 
 export const Hero = () => {
   return (

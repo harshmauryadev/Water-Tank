@@ -14,12 +14,12 @@ export default function PWAInstaller() {
   const [isInstalled, setIsInstalled] = useState(false);
 
   useEffect(() => {
-    // 1. Register Service Worker
-    if ('serviceWorker' in navigator) {
+    // 1. Register Service Worker safely
+    if ('serviceWorker' in navigator && typeof window !== 'undefined') {
       navigator.serviceWorker
         .register('/sw.js')
         .then((reg) => console.log('PWA Service Worker registered:', reg.scope))
-        .catch((err) => console.error('PWA Service Worker registration failed:', err));
+        .catch((err) => console.warn('PWA Service Worker registration note:', err));
     }
 
     // 2. Check if already installed in standalone mode

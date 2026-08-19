@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Droplet, Menu, X, ShoppingCart } from 'lucide-react';
+import { Droplet, Menu, X, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 export const Navbar = () => {
@@ -100,14 +100,14 @@ export const Navbar = () => {
             ))}
           </nav>
           <div className="pt-2">
-            <Link
-              href="/order-kit"
+            <a
+              href="tel:+918004787983"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-bold shadow-md"
             >
-              <span>Buy Now</span>
-              <ShoppingCart className="w-4 h-4" />
-            </Link>
+              <span>Call Us</span>
+              <Phone className="w-4 h-4" />
+            </a>
           </div>
         </div>
       )}

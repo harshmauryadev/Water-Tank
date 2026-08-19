@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { ArrowRight, ShieldCheck, Truck, Headphones } from 'lucide-react';
-import Link from 'next/link';
 
 export const CallToAction = () => {
   return (

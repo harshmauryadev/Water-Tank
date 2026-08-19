@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Cpu, Wifi, ShieldCheck, Zap, Radio, Sliders, Thermometer, Layers, Tv, Droplet } from 'lucide-react';
+import { Cpu, Wifi, ShieldCheck, Zap, Radio, Sliders, Droplet } from 'lucide-react';
 
 export const ProductShowcase = () => {
   const specifications = [
