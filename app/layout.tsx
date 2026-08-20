@@ -1,7 +1,12 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import dynamic from 'next/dynamic';
 import PWAInstaller from '../components/PWAInstaller';
 import FloatingSocialSidebar from '../components/FloatingSocialSidebar';
+
+const WaterRippleEffect = dynamic(() => import('../components/WaterRippleEffect'), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: 'Tanki Meter Pro - Smart IoT Water Pump Controller',
@@ -37,6 +42,7 @@ export default function RootLayout({
         className="min-h-screen bg-[#F8FAFC] text-[#0F172A] antialiased selection:bg-[#14B8A6] selection:text-white"
         suppressHydrationWarning
       >
+        <WaterRippleEffect />
         {children}
         <FloatingSocialSidebar />
         <PWAInstaller />

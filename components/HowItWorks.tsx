@@ -66,13 +66,25 @@ export const HowItWorks = () => {
 
           </div>
 
-          {/* Real System Diagram Image Banner */}
-          <div className="mt-8 relative rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-[#0F172A] flex justify-center items-center p-3 group">
-            <img
-              src="/images/how-it-works.png"
-              alt="Tanki Meter How It Works Complete System Flow Diagram"
-              className="w-full h-auto max-h-[320px] object-contain rounded-xl transform group-hover:scale-102 transition-transform duration-500"
-            />
+          {/* Video Player Container */}
+          <div className="mt-8 relative rounded-2xl overflow-hidden border border-slate-700/60 shadow-2xl bg-[#0F172A] flex flex-col items-center justify-center min-h-[320px] sm:min-h-[400px] group">
+            
+            {/* HTML5 Video Player */}
+            <video
+              controls
+              preload="metadata"
+              poster="/images/how-it-works.png"
+              className="w-full h-full max-h-[420px] object-cover rounded-xl relative z-10"
+            >
+              <source src="/videos/how-it-works.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            {/* Video Helper Notice / Overlay Banner */}
+            <div className="absolute top-4 left-4 z-20 px-3.5 py-1.5 rounded-full bg-[#0F172A]/85 border border-[#0EA5E9]/40 text-white text-xs font-bold shadow-lg backdrop-blur-md flex items-center gap-2 pointer-events-none">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#14B8A6] animate-pulse" />
+              <span>Tanki Meter Demo Video</span>
+            </div>
           </div>
 
           {/* Subtext description & Explore More CTA */}
